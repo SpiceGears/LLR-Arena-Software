@@ -67,7 +67,7 @@ NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
 });
 
 // This button is just an example of triggering an event on the robot by clicking a button.
-NetworkTables.addKeyListener('/SmartDashboard/Dane', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/randomNumber', (key, value) => {
     ui.example.readout.data = ' ' + value;
 });
 
