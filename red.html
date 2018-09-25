@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lubelskie: Liga robotyki RED</title>
+<style>
+body{
+font-size: 30px;
+}
+
+.buttonRED {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonGREEN {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: green;
+}
+</style>
+</head>
+<body>
+  <script>
+      var redBalls = 0;
+      function buttonRedMinus() {
+          redBalls--;
+          document.getElementById('redBalls').value = redBalls;
+      }
+      function buttonRedPlus() {
+          redBalls++;
+          document.getElementById('redBalls').value = redBalls;
+      }
+      var blueBalls = 0;
+      function buttonBlueMinus() {
+          blueBalls--;
+          document.getElementById('blueBalls').value = blueBalls;
+      }
+      function buttonBluePlus() {
+          blueBalls++;
+          document.getElementById('blueBalls').value = blueBalls;
+      }
+
+      function punktyKarnePlus() {
+          punktyKarne++;
+          document.getElementById('punktyKarne').value = punktyKarne;
+      }
+
+      var punktyKarne = 0;
+      function punktyKarneMinus() {
+          punktyKarne--;
+          document.getElementById('punktyKarne').value = punktyKarne;
+      }
+      function punktyKarnePlus() {
+          punktyKarne++;
+          document.getElementById('punktyKarne').value = punktyKarne;
+      }
+
+  </script>
+<center><h2>Czerwone piłki</h2>
+
+<button class="buttonRED" onclick="buttonRedMinus();">MINUS</button>
+<input type="text" id="redBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<button class="buttonGREEN" onclick="buttonRedPlus();">PLUS</button>
+
+<h2>Niebieskie piłki</h2>
+
+<button class="buttonRED" onclick="buttonBlueMinus();">MINUS</button>
+<input type="text" id="blueBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<button class="buttonGREEN" onclick="buttonBluePlus();">PLUS</button>
+
+<h2>CUBY</h2>
+<button class="buttonGREEN">PLUS</button>
+<button class="buttonGREEN">PLUS</button>
+<button class="buttonGREEN">PLUS</button>
+
+<h2>PUNKTY KARNE</h2>
+<button class="buttonRED" onclick="punktyKarneMinus();">MINUS</button>
+<input type="text" id="punktyKarne" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<button class="buttonGREEN" onclick="punktyKarnePlus();">PLUS</button>
+
+
+</center>
+
+<
+</body>
+</html>
