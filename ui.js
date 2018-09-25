@@ -10,6 +10,9 @@ let ui = {
         arm: document.getElementById('gyro-arm'),
         number: document.getElementById('gyro-number')
     },
+    redTeam: {
+        redBalls: document.getElementById('')
+    },
     robotDiagram: {
         arm: document.getElementById('robot-arm')
     },
@@ -37,34 +40,9 @@ function onRobotConnection(connected) {
 	console.log(state);
 	ui.robotState.innerHTML = state;
 }
+//OUR LLR CODE
 
-// Gyro rotation
-let updateGyro = (key, value) => {
-    ui.gyro.val = value;
-    ui.gyro.visualVal = Math.floor(ui.gyro.val - ui.gyro.offset);
-    ui.gyro.visualVal %= 360;
-    if (ui.gyro.visualVal < 0) {
-        ui.gyro.visualVal += 360;
-    }
-    ui.gyro.arm.style.transform = `rotate(${ui.gyro.visualVal}deg)`;
-    ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
-};
-NetworkTables.addKeyListener('/SmartDashboard/drive/navx/yaw', updateGyro);
 
-// The following case is an example, for a robot with an arm at the front.
-NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
-    // 0 is all the way back, 1200 is 45 degrees forward. We don't want it going past that.
-    if (value > 1140) {
-        value = 1140;
-    }
-    else if (value < 0) {
-        value = 0;
-    }
-    // Calculate visual rotation of arm
-    var armAngle = value * 3 / 20 - 45;
-    // Rotate the arm in diagram to match real arm
-    ui.robotDiagram.arm.style.transform = `rotate(${armAngle}deg)`;
-});
 
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/randomNumber', (key, value) => {
@@ -130,3 +108,31 @@ ui.armPosition.oninput = function() {
 addEventListener('error',(ev)=>{
     ipc.send('windowError',{mesg:ev.message,file:ev.filename,lineNumber:ev.lineno})
 })
+
+// Gyro rotation
+let updateGyro = (key, value) => {
+    ui.gyro.val = value;
+    ui.gyro.visualVal = Math.floor(ui.gyro.val - ui.gyro.offset);
+    ui.gyro.visualVal %= 360;
+    if (ui.gyro.visualVal < 0) {
+        ui.gyro.visualVal += 360;
+    }
+    ui.gyro.arm.style.transform = `rotate(${ui.gyro.visualVal}deg)`;
+    ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
+};
+NetworkTables.addKeyListener('/SmartDashboard/drive/navx/yaw', updateGyro);
+
+// The following case is an example, for a robot with an arm at the front.
+NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
+    // 0 is all the way back, 1200 is 45 degrees forward. We don't want it going past that.
+    if (value > 1140) {
+        value = 1140;
+    }
+    else if (value < 0) {
+        value = 0;
+    }
+    // Calculate visual rotation of arm
+    var armAngle = value * 3 / 20 - 45;
+    // Rotate the arm in diagram to match real arm
+    ui.robotDiagram.arm.style.transform = `rotate(${armAngle}deg)`;
+});

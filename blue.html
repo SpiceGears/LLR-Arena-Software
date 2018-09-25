@@ -1,4 +1,4 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Lubelskie: Liga robotyki RED</title>
@@ -36,45 +36,46 @@ font-size: 30px;
       var redBalls = 0;
       function buttonRedMinus() {
           redBalls--;
-          localStorage.setItem("redBallsRedTeam", redBalls);
+          localStorage.setItem("redBallsBlueTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
       }
       function buttonRedPlus() {
           redBalls++;
-          localStorage.setItem("redBallsRedTeam", redBalls);
+          localStorage.setItem("redBallsBlueTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
       }
       var blueBalls = 0;
       function buttonBlueMinus() {
           blueBalls--;
-          localStorage.setItem("blueBallsRedTeam", blueBalls--);
+          localStorage.setItem("blueBallsBlueTeam", blueBalls);
           document.getElementById('blueBalls').value = blueBalls;
       }
       function buttonBluePlus() {
           blueBalls++;
-          localStorage.setItem("blueBallsRedTeam", blueBalls);
+          localStorage.setItem("blueBallsBlueTeam", blueBalls);
           document.getElementById('blueBalls').value = blueBalls;
       }
 
       function punktyKarnePlus() {
           punktyKarne++;
-          localStorage.setItem("punktyKarneRedTeam", punktyKarne);
+          localStorage.setItem("punktyKarneBlueTeam", punktyKarne);
           document.getElementById('punktyKarne').value = punktyKarne;
       }
 
       var punktyKarne = 0;
       function punktyKarneMinus() {
           punktyKarne--;
-          localStorage.setItem("punktyKarneRedTeam", punktyKarne);
+          localStorage.setItem("punktyKarneBlueTeam", punktyKarne);
           document.getElementById('punktyKarne').value = punktyKarne;
       }
+
+
   </script>
 <center><h2>Czerwone pilki</h2>
 
 <button class="buttonRED" onclick="buttonRedMinus();">MINUS</button>
 <input type="text" id="redBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
 <button class="buttonGREEN" onclick="buttonRedPlus();">PLUS</button>
-
 
 <h2>Niebieskie pilki</h2>
 

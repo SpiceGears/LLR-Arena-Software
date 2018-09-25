@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCORE</title>
+<style>
+body{
+font-size: 30px;
+}
+
+.buttonRED {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonGREEN {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: green;
+}
+</style>
+</head>
+<body>
+  <script>
+      var redBallsRedTeam = localStorage.redBallsRedTeam;
+      var blueBallsRedTeam = localStorage.blueBallsRedTeam;
+      var punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
+      function refreshScore() {
+          redBallsRedTeam = localStorage.redBallsRedTeam;
+          document.getElementById('redBallsRedTeam').value = redBallsRedTeam;
+          blueBallsRedTeam = localStorage.blueBallsRedTeam;
+          document.getElementById('blueBallsRedTeam').value = blueBallsRedTeam;
+          punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
+          document.getElementById('punktyKarneRedTeam').value = punktyKarneRedTeam;
+      }
+
+  </script>
+  <table style="width:100%">
+    <tr>
+      <th background-color=red>Red Team</th>
+      <th color=blue>Blue Team</th>
+    </tr>
+    <tr>
+<th>
+<center><h2>Czerwone pilki</h2>
+
+<input type="text" id="redBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+
+<h2>Niebieskie pilki</h2>
+
+<input type="text" id="blueBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+
+<h2>CUBY</h2>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+
+<h2>ILOSC FAULI</h2>
+<input type="text" id="punktyKarneRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+
+<h2>ZAPARKOWANE ROBOTY</h2>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+
+</center>
+</th>
+
+<th>
+  <center><h2>Czerwone pilki</h2>
+<input type="text" id="redBallsBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
+
+<h2>Niebieskie pilki</h2>
+
+<input type="text" id="blueBallsBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
+
+<h2>CUBY</h2>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+
+<h2>ILOSC FAULI</h2>
+<input type="text" id="punktyKarneBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
+
+<h2>ZAPARKOWANE ROBOTY</h2>
+<button class="buttonRED">PLUS</button>
+<button class="buttonRED">PLUS</button>
+</th>
+</center>
+</table>
+<center>
+<button class="buttonGREEN" onclick="refreshScore();">ODSWIEZ</button>
+</center>
+<script>
+    refreshScore();
+</script>
+</body>
+</html>
