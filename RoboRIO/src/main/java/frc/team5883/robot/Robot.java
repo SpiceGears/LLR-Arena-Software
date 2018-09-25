@@ -28,7 +28,7 @@ public class Robot extends IterativeRobot {
 
         //wysyłanie
 
-        SmartDashboard.putNumber("Timer", Timer.getMatchTime());
+        SmartDashboard.putNumber("Timer", Math.round(Timer.getMatchTime()));
         SmartDashboard.putNumber("randomNumber", random);
         Timer.getMatchTime();
 
