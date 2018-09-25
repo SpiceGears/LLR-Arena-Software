@@ -67,7 +67,7 @@ NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
 });
 
 // This button is just an example of triggering an event on the robot by clicking a button.
-NetworkTables.addKeyListener('/SmartDashboard/Dane', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/randomNumber', (key, value) => {
     ui.example.readout.data = ' ' + value;
 });
 
@@ -79,7 +79,7 @@ NetworkTables.addKeyListener('/LiveWindow/AimingSystem/Limit Switch 2/Value', (k
     ui.crossBlue.crossreadoutBlue.data = value;
 });
 
-NetworkTables.addKeyListener('/SmartDashboard/time_running', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Timer', (key, value) => {
     // This is an example of how a dashboard could display the remaining time in a match.
     // We assume here that value is an integer representing the number of seconds left.
     ui.timer.innerHTML = value < 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;

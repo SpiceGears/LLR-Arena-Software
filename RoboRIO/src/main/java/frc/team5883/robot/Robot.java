@@ -1,6 +1,7 @@
 package frc.team5883.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
@@ -19,14 +20,17 @@ public class Robot extends IterativeRobot {
 
     }
 
-    private int xd = 0;
+    private int random = 0;
 
     public void teleopPeriodic() {
 
-        xd += 1;
+        random += 1;
 
         //wysyłanie
-        SmartDashboard.putNumber("Losowa liczba: ", xd);
+
+        SmartDashboard.putNumber("Timer", Timer.getMatchTime());
+        SmartDashboard.putNumber("randomNumber", random);
+        Timer.getMatchTime();
 
     }
 }
