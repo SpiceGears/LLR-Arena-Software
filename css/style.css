@@ -1,0 +1,255 @@
+body
+{
+	background-image: url("tiles.jpg");
+	margin: 0px;
+}
+
+#megacon
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 8px;
+	
+	width: 1000px;
+	height: 50%;
+}
+
+#timer
+{
+	background-color: #33cc00;
+	margin-left: auto;
+	margin-right: auto;
+	width: 33%;
+	//height: 80px;
+	color: black;
+	font-size: 68px;
+	text-align: center;
+	
+	border-style: solid;
+	border-width: 2px;
+	border-bottom-width: 1px;
+}
+
+#con
+{
+	height: 150px;
+}
+
+.side
+{
+	width: 250px;
+	height: 100%;
+	
+	float: left;
+}
+
+.inSideT
+{
+	background-color: #dadada;
+	
+	border-style: solid;
+	border-width: 2px;
+	border-bottom-width: 1px;
+	
+	width: 246px;
+	height: 75px;
+	
+	text-align: center;
+	line-height: 250%;
+	
+	font-size: 30px;
+}
+
+.inSideB
+{
+	background-color: #dadada;
+	
+	border-style: solid;
+	border-width: 2px;
+	border-top-width: 1px;
+	
+	width: 246px;
+	height: 75px;
+	
+	text-align: center;
+	line-height: 250%;
+	
+	font-size: 30px;
+}
+
+#C
+{
+	width: 500px;
+	height: 150px;
+	
+	float: left;
+}
+
+.CP
+{
+	width: 500px;
+	height: 49.5px;
+}
+/*
+.corssboxcon
+{
+	//position: relative;
+	
+	width: 25%;
+	height: 100%;
+	
+	float: left;
+}
+*/
+.crossbox
+{
+	background-color: #d8bfd8;
+	
+	width: 38px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 2px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 200%;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.crossRed-input
+{
+	background-color: #d8bfd8;
+	
+	width: 38px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 2px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 0px;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.crossBlue-input
+{
+	background-color: #d8bfd8;
+	
+	width: 38px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 2px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 0px;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.kwadrat
+{
+	width: 258px;
+	height: 100%;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 2px;
+	
+	background-color: #cc99ff;
+	
+	text-align: center;
+	line-height: 175%;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.red
+{
+	background-color: #ff0033;
+	
+	width: 123px;
+	
+	border-style: solid;
+	border-width: 1px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 0px;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.blue
+{
+	background-color: #6666ff;
+	
+	width: 123px;
+	
+	border-style: solid;
+	border-width: 1px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 0px;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.bottom
+{
+	width: 248px;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-bottom-width: 2px;
+	
+	height: 100%;
+	
+	background-color: #cc99ff;
+	
+	text-align: center;
+	line-height: 175%;
+	
+	font-size: 30px;
+	
+	float: left;
+}
+
+.empty
+{
+	background-color: #cc99ff;
+	
+	width: calc(25% - 2px);
+	
+	border-style: solid;
+	border-width: 1px;
+	
+	height: 100%;
+	
+	text-align: center;
+	line-height: 175%;
+	
+	font-size: 30px;
+	
+	float: left;
+}

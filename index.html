@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FRC Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+
+<body>
+		<body>
+		<div id="megacon">
+			<div id="robot-state"></div>
+			<div id="timer"><span id="time">
+				2:30
+				</span>
+			</div>
+			<div id="con">
+				<div class="side">
+					<div class="inSideT">
+						LT
+					</div>
+					<div class="inSideB">
+						LB
+					</div>
+				</div>
+				<div id="C">
+					<div class="CP">
+						<!--<div class="crossboxcon">-->
+								<div class="crossRed-input">
+									<p id="cross-readoutRed">lol</p>
+								</div>
+							<div class="crossRed-input">
+								
+							</div>
+							<div class="crossRed-input">
+								
+							</div>
+						<!--</div>-->
+						<div class="kwadrat">
+							C
+						</div>
+							<div class="crossBlue-input">
+								<p id="cross-readoutBlue">lol</p>
+							</div>
+							<div class="crossBlue-input">
+								
+							</div>
+							<div class="crossBlue-input">
+								
+							</div>
+						<!--</div>-->
+					</div>
+					<div class="CP">
+						<div class="empty">
+						</div>
+						<div class="red">
+							<div id="example-section">
+								<p id="example-readout">0</p>
+							</div>
+						</div>
+						<div class="blue">
+							<div id="examplesecond-section">
+								<p id="example-readoutsecond">0</p>
+							</div>
+						</div>
+						<div class="empty">
+						</div>
+					</div>
+					<div class="CP">
+						<div class="bottom">
+							H
+						</div>
+						<div class="bottom">
+							H
+						</div>
+					</div>	
+				</div>
+				<div class="side">
+					<div class="inSideT">
+						RT
+					</div>
+					<div class="inSideB">
+						RB
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<script> if(robot-state){
+	function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+		timer = 0;
+		document.getElementById("timer").style.backgroundColor = "red";
+        }
+    }, 1000);
+}
+}
+
+window.onload = function () {
+    var twoAndHalfMinutes = 60 * 2 + 30,
+        display = document.querySelector('#time');
+    startTimer(twoAndHalfMinutes, display);
+};
+
+</script>
+	<script src="tuning.js"></script>
+    <script src="/networktables/networktables.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>
