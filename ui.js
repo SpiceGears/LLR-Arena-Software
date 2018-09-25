@@ -71,11 +71,11 @@ NetworkTables.addKeyListener('/SmartDashboard/randomNumber', (key, value) => {
     ui.example.readout.data = ' ' + value;
 });
 
-NetworkTables.addKeyListener('/LiveWindow/AimingSystem/Limit Switch 1/Value', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/limitSwitch1', (key, value) => {
     ui.crossRed.crossreadoutRed.data = value;
 });
 
-NetworkTables.addKeyListener('/LiveWindow/AimingSystem/Limit Switch 2/Value', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/limitSwitch2', (key, value) => {
     ui.crossBlue.crossreadoutBlue.data = value;
 });
 
