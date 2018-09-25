@@ -11,7 +11,7 @@
 		<body>
 		<div id="megacon">
 			<div id="robot-state"></div>
-			<div id="timer"><span id="time">
+			<div id="timer"><span id="timer">
 				2:30
 				</span>
 			</div>
@@ -56,7 +56,7 @@
 						</div>
 						<div class="red">
 							<div id="example-section">
-								<p id="example-readout">0</p>
+								<p id="example-readout">xd</p>
 							</div>
 						</div>
 						<div class="blue">
@@ -87,7 +87,16 @@
 			</div>
 		</div>
 
-<script>
+<script> if(robot-state){
+	function box() {
+		
+     var a = document.getElementById("cross-readoutRed");
+	 if(a){
+		var color = document.getElementById("crossRed-input");
+		color.style.color = blue;
+	 }
+}
+}
 
 </script>
 	<script src="tuning.js"></script>
