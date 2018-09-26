@@ -1,7 +1,7 @@
 l<!DOCTYPE html>
 <html>
 <head>
-  <title>Lubelskie: Liga robotyki RED</title>
+  <title>RED</title>
 <style>
 body{
 font-size: 30px;
@@ -33,7 +33,25 @@ font-size: 30px;
 </head>
 <body>
   <script>
-      var redBalls = 0;
+      var redBalls = localStorage.redBallsRedTeam;
+      var blueBalls = localStorage.blueBallsRedTeam;
+      var punktyKarne = localStorage.punktyKarneRedTeam;
+      var iloscCubow = localStorage.iloscCubowRedTeam;
+      var zaparkowaneRoboty = localStorage.zaparkowaneRobotyRedTeam;
+
+      function refreshPoints(){
+        redBalls = localStorage.redBallsRedTeam;
+        blueBalls = localStorage.blueBallsRedTeam;
+        punktyKarne = localStorage.punktyKarneRedTeam;
+        iloscCubow = localStorage.iloscCubowRedTeam;
+        zaparkowaneRoboty = localStorage.zaparkowaneRobotyRedTeam;
+        document.getElementById('redBalls').value = redBalls;
+        document.getElementById('blueBalls').value = blueBalls;
+        document.getElementById('punktyKarne').value = punktyKarne;
+        document.getElementById('iloscCubow').value = iloscCubow;
+        document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
+
+      }
       function buttonRedMinus() {
           redBalls--;
           localStorage.setItem("redBallsRedTeam", redBalls);
@@ -44,10 +62,9 @@ font-size: 30px;
           localStorage.setItem("redBallsRedTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
       }
-      var blueBalls = 0;
       function buttonBlueMinus() {
           blueBalls--;
-          localStorage.setItem("blueBallsRedTeam", blueBalls--);
+          localStorage.setItem("blueBallsRedTeam", blueBalls);
           document.getElementById('blueBalls').value = blueBalls;
       }
       function buttonBluePlus() {
@@ -55,49 +72,85 @@ font-size: 30px;
           localStorage.setItem("blueBallsRedTeam", blueBalls);
           document.getElementById('blueBalls').value = blueBalls;
       }
-
+      //PUNKTY KARNE
       function punktyKarnePlus() {
+          punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
           punktyKarne++;
           localStorage.setItem("punktyKarneRedTeam", punktyKarne);
           document.getElementById('punktyKarne').value = punktyKarne;
       }
-
-      var punktyKarne = 0;
       function punktyKarneMinus() {
+          punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
           punktyKarne--;
           localStorage.setItem("punktyKarneRedTeam", punktyKarne);
           document.getElementById('punktyKarne').value = punktyKarne;
       }
-  </script>
-<center><h2>Czerwone pilki</h2>
+      //ILOSC CUBOW
+      function iloscCubowPlus() {
+          iloscCubow++;
+          localStorage.setItem("iloscCubowRedTeam", iloscCubow);
+          document.getElementById('iloscCubow').value = iloscCubow;
+      }
+      function iloscCubowMinus() {
+          iloscCubow--;
+          localStorage.setItem("iloscCubowRedTeam", iloscCubow);
+          document.getElementById('iloscCubow').value = iloscCubow;
+      }
+      //ZAPARKOWANE ROBOTY
+      function zaparkowaneRobotyPlus() {
+          zaparkowaneRoboty++;
+          localStorage.setItem("zaparkowaneRobotyRedTeam", zaparkowaneRoboty);
+          document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
+      }
+      function zaparkowaneRobotyMinus() {
+          zaparkowaneRoboty--;
+          localStorage.setItem("zaparkowaneRobotyRedTeam", zaparkowaneRoboty);
+          document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
+      }
+      function resetRedScore(){
+        localStorage.setItem("redBallsRedTeam", 0);
+        localStorage.setItem("blueBallsRedTeam", 0);
+        localStorage.setItem("iloscCubowRedTeam", 0);
+        localStorage.setItem("punktyKarneRedTeam", 0);
+        localStorage.setItem("zaparkowaneRobotyRedTeam", 0);
+        refreshPoints();
 
+      }
+  </script>
+
+<center><h2>Czerwone pilki</h2>
 <button class="buttonRED" onclick="buttonRedMinus();">MINUS</button>
-<input type="text" id="redBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<input type="text" id="redBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="buttonRedPlus();">PLUS</button>
 
-
 <h2>Niebieskie pilki</h2>
-
 <button class="buttonRED" onclick="buttonBlueMinus();">MINUS</button>
-<input type="text" id="blueBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<input type="text" id="blueBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="buttonBluePlus();">PLUS</button>
 
 <h2>CUBY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<button class="buttonRED" onclick="iloscCubowMinus();">MINUS</button>
+<input type="text" id="iloscCubow" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="iloscCubowPlus();">PLUS</button>
 
 <h2>ILOSC FAULI</h2>
 <button class="buttonRED" onclick="punktyKarneMinus();">MINUS</button>
-<input type="text" id="punktyKarne" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> ></input>
+<input type="text" id="punktyKarne" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="punktyKarnePlus();">PLUS</button>
 
 <h2>ZAPARKOWANE ROBOTY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<button class="buttonRED" onclick="zaparkowaneRobotyMinus();">MINUS</button>
+<input type="text" id="zaparkowaneRoboty" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="zaparkowaneRobotyPlus();">PLUS</button>
+
+<h2>Reset red score</h2>
+<button class="buttonRED" onclick="resetRedScore();">Reset match</button>
 
 </center>
 
-<
+<script>
+  refreshPoints();
+</script>
+
 </body>
 </html>

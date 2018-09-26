@@ -35,14 +35,37 @@ font-size: 30px;
   <script>
       var redBallsRedTeam = localStorage.redBallsRedTeam;
       var blueBallsRedTeam = localStorage.blueBallsRedTeam;
+      var iloscCubowRedTeam = localStorage.iloscCubowRedTeam;
       var punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
+      var zaparkowaneRobotyRedTeam = localStorage.zaparkowaneRobotyRedTeam;
+
+      var redBallsBlueTeam = localStorage.redBallsBlueTeam;
+      var blueBallsBlueTeam = localStorage.blueBallsBlueTeam;
+      var iloscCubowBlueTeam = localStorage.iloscCubowBlueTeam;
+      var punktyKarneBlueTeam = localStorage.punktyKarneBlueTeam;
+      var zaparkowaneRobotyBlueTeam = localStorage.zaparkowaneRobotyBlueTeam;
       function refreshScore() {
           redBallsRedTeam = localStorage.redBallsRedTeam;
           document.getElementById('redBallsRedTeam').value = redBallsRedTeam;
           blueBallsRedTeam = localStorage.blueBallsRedTeam;
           document.getElementById('blueBallsRedTeam').value = blueBallsRedTeam;
+          iloscCubowRedTeam = localStorage.iloscCubowRedTeam;
+          document.getElementById('iloscCubowRedTeam').value = iloscCubowRedTeam;
           punktyKarneRedTeam = localStorage.punktyKarneRedTeam;
           document.getElementById('punktyKarneRedTeam').value = punktyKarneRedTeam;
+          zaparkowaneRobotyRedTeam = localStorage.zaparkowaneRobotyRedTeam;
+          document.getElementById('zaparkowaneRobotyRedTeam').value = zaparkowaneRobotyRedTeam;
+
+          redBallsBlueTeam = localStorage.redBallsBlueTeam;
+          document.getElementById('redBallsBlueTeam').value = redBallsBlueTeam;
+          blueBallsBlueTeam = localStorage.blueBallsBlueTeam;
+          document.getElementById('blueBallsBlueTeam').value = blueBallsBlueTeam;
+          iloscCubowBlueTeam = localStorage.iloscCubowBlueTeam;
+          document.getElementById('iloscCubowBlueTeam').value = iloscCubowBlueTeam;
+          punktyKarneBlueTeam = localStorage.punktyKarneBlueTeam;
+          document.getElementById('punktyKarneBlueTeam').value = punktyKarneBlueTeam;
+          zaparkowaneRobotyBlueTeam = localStorage.zaparkowaneRobotyBlueTeam;
+          document.getElementById('zaparkowaneRobotyBlueTeam').value = zaparkowaneRobotyBlueTeam;
       }
 
   </script>
@@ -55,23 +78,20 @@ font-size: 30px;
 <th>
 <center><h2>Czerwone pilki</h2>
 
-<input type="text" id="redBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<input type="text" id="redBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>Niebieskie pilki</h2>
 
-<input type="text" id="blueBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<input type="text" id="blueBallsRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>CUBY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<input type="text" id="iloscCubowRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>ILOSC FAULI</h2>
-<input type="text" id="punktyKarneRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<input type="text" id="punktyKarneRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>ZAPARKOWANE ROBOTY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<input type="text" id="zaparkowaneRobotyRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 </center>
 </th>
@@ -85,16 +105,14 @@ font-size: 30px;
 <input type="text" id="blueBallsBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>CUBY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<input type="text" id="iloscCubowBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>ILOSC FAULI</h2>
 <input type="text" id="punktyKarneBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
 
 <h2>ZAPARKOWANE ROBOTY</h2>
-<button class="buttonRED">PLUS</button>
-<button class="buttonRED">PLUS</button>
+<input type="text" id="zaparkowaneRobotyBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
+
 </th>
 </center>
 </table>
