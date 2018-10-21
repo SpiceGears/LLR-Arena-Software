@@ -1,15 +1,17 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>RED</title>
 <style>
 body{
-font-size: 30px;
+font-size: 20px;
+background-color: #d9d9d9;
 }
 
 .buttonRED {
     background-color: red;
     border: none;
+	border-radius: 20px;
     color: white;
     padding: 40px 40px;
     text-align: center;
@@ -19,6 +21,17 @@ font-size: 30px;
 .buttonGREEN {
     background-color: green;
     border: none;
+	border-radius: 20px;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonRESET {
+    background-color: gray;
+    border: none;
+	border-radius: 20px;
     color: white;
     padding: 40px 40px;
     text-align: center;
@@ -33,11 +46,13 @@ font-size: 30px;
 </head>
 <body>
   <script>
+	  var reset = 0;
       var redBalls = localStorage.redBallsRedTeam;
       var blueBalls = localStorage.blueBallsRedTeam;
       var punktyKarne = localStorage.punktyKarneRedTeam;
       var iloscCubow = localStorage.iloscCubowRedTeam;
       var zaparkowaneRoboty = localStorage.zaparkowaneRobotyRedTeam;
+	  var countRed = localStorage.getItem("countRed");
 
       function refreshPoints(){
         redBalls = localStorage.redBallsRedTeam;
@@ -45,7 +60,8 @@ font-size: 30px;
         punktyKarne = localStorage.punktyKarneRedTeam;
         iloscCubow = localStorage.iloscCubowRedTeam;
         zaparkowaneRoboty = localStorage.zaparkowaneRobotyRedTeam;
-        document.getElementById('redBalls').value = redBalls;
+        
+		document.getElementById('redBalls').value = redBalls;
         document.getElementById('blueBalls').value = blueBalls;
         document.getElementById('punktyKarne').value = punktyKarne;
         document.getElementById('iloscCubow').value = iloscCubow;
@@ -108,22 +124,28 @@ font-size: 30px;
           document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
       }
       function resetRedScore(){
+		reset++;
+		if(reset == 2){
+		reset = 0;
         localStorage.setItem("redBallsRedTeam", 0);
         localStorage.setItem("blueBallsRedTeam", 0);
         localStorage.setItem("iloscCubowRedTeam", 0);
         localStorage.setItem("punktyKarneRedTeam", 0);
         localStorage.setItem("zaparkowaneRobotyRedTeam", 0);
         refreshPoints();
-
+		localStorage.setItem("cubePointsRed", 0);
+		localStorage.removeItem('resetR');
+		localStorage.setItem("pointsR", 0);
+		}
       }
   </script>
 
-<center><h2>Czerwone pilki</h2>
+<center><h2>RED BALLS</h2>
 <button class="buttonRED" onclick="buttonRedMinus();">MINUS</button>
 <input type="text" id="redBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="buttonRedPlus();">PLUS</button>
 
-<h2>Niebieskie pilki</h2>
+<h2>BLUE BALLS</h2>
 <button class="buttonRED" onclick="buttonBlueMinus();">MINUS</button>
 <input type="text" id="blueBalls" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="buttonBluePlus();">PLUS</button>
@@ -144,7 +166,7 @@ font-size: 30px;
 <button class="buttonGREEN" onclick="zaparkowaneRobotyPlus();">PLUS</button>
 
 <h2>Reset red score</h2>
-<button class="buttonRED" onclick="resetRedScore();">Reset match</button>
+<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>
 
 </center>
 

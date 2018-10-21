@@ -1,0 +1,320 @@
+body
+{
+	background-image: url("Sorce/Sponsory.png");
+	margin: 0px;
+	font-family: Arial;
+}
+
+#Wynik
+{
+	margin-left: auto;
+	margin-right: auto;
+	
+	margin-top: 65px;
+	margin-bottom: auto;
+	
+	/*
+	background-color: black;
+	opacity: 1;
+	
+	height: 100vh; */
+	width: 100vh;
+}
+
+#Container
+{
+	
+	
+}
+
+#Top
+{
+	padding-top: 40px;
+	
+	
+	text-align: center;
+	
+	font-size: 100px;
+	text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+	color: white;
+}
+
+#Bottom
+{	
+	margin-left:5vh;
+	margin-right: 5vh;
+	padding-top: 10vh;
+}
+
+#BottomL
+{
+	background-color: red;
+	margin-right: auto;
+	float: left;
+	font-weight: 550;
+	
+	width: 44vh;
+}
+
+#BottomL2
+{
+	padding: 10px;
+}
+
+.PionPrzed
+{
+	width: 2vh;
+	height: 1px;
+	
+	float: left;
+}
+
+#BottomR
+{
+	background-color: #3300ff;
+	margin-left: auto;
+	float: left;
+	font-weight: 550;
+	
+	width: 44vh;
+}
+
+#BottomR2
+{
+	padding: 10px;
+}
+
+#RedName
+{
+	font-size: 35px;
+	text-align: center;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	
+}
+
+#BlueName
+{
+	font-size: 35px;
+	text-align: center;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.PunktyL1{
+	
+	background-color: #999999;
+	padding-top: 5px;
+	padding-bottom: 1px;
+	padding-left: 8px;
+	
+	width: 36vh;
+	height: 30px;
+	
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+.PunktyL2{
+	
+	background-color: #cdcdcd;
+	padding-top: 5px;
+	padding-bottom: 1px;
+	padding-left: 8px;
+	
+	width: 36vh;
+	height: 30px;
+	
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+#PunktyR1{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR11{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR111{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR1111{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR11111{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR111111{
+	
+	background-color: #999999;
+	padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;	
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR2{
+	
+	background-color: #cdcdcd;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR22{
+	
+	background-color: #cdcdcd;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR222{
+	
+	background-color: #cdcdcd;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+#PunktyR2222{
+	
+	background-color: #cdcdcd;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 6px;
+	
+	width: 3.2vh;
+	height: 30px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	
+	float: left;
+}
+
+.PunktyPionPrzedzial{
+	
+	width: 4px;
+	height:15px;
+	
+	float: left;
+}
+
+.PunktyPoziomPrzedzial{
+	
+	width: 15px;
+	height: 4px;
+	
+	clear: both;
+}

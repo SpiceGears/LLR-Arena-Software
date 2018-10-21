@@ -66,13 +66,15 @@ font-size: 30px;
           document.getElementById('punktyKarneBlueTeam').value = punktyKarneBlueTeam;
           zaparkowaneRobotyBlueTeam = localStorage.zaparkowaneRobotyBlueTeam;
           document.getElementById('zaparkowaneRobotyBlueTeam').value = zaparkowaneRobotyBlueTeam;
+		  
+		  setTimeout("refreshScore()", 10);
       }
 
   </script>
   <table style="width:100%">
     <tr>
-      <th background-color=red>Red Team</th>
-      <th color=blue>Blue Team</th>
+      <th>Red Team</th>
+      <th>Blue Team</th>
     </tr>
     <tr>
 <th>
@@ -116,9 +118,6 @@ font-size: 30px;
 </th>
 </center>
 </table>
-<center>
-<button class="buttonGREEN" onclick="refreshScore();">ODSWIEZ</button>
-</center>
 <script>
     refreshScore();
 </script>

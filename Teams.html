@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Teams</title>
+	<meta http-equiv="X-UA-Compatible=" content="IE=edge chrome=1" />
+	<style>
+		.buttonRED{
+			background-color: red;
+			border: none;
+			border-radius: 20px;
+			color: white;
+		}
+		.buttonBLUE{
+			background-color: blue;
+			border: none;
+			border-radius: 20px;
+			color: white;
+		}
+		.buttonRESET{
+			background-color: black;
+			border: none;
+			border-radius: 20px;
+			color: white;
+		}
+	</style>
+</head>
+	
+<body>
+	<script>
+		
+		function resetTeams(){
+			localStorage.setItem("rightTeam1", 0);
+			localStorage.setItem("rightTeam2", 0);
+			localStorage.setItem("leftTeam1", 0);
+			localStorage.setItem("leftTeam2", 0);
+		}
+		
+		function setRightTeam1(){
+			var r1 = document.getElementById("rightTeamOne").value;
+			
+			localStorage.setItem("rightTeam1", r1);
+		}
+		function setRightTeam2(){
+			var r2 = document.getElementById("rightTeamTwo").value;
+			
+			localStorage.setItem("rightTeam2", r2);
+		}
+		function setLeftTeam1(){
+			var l1 = document.getElementById("leftTeamOne").value;
+			
+			localStorage.setItem("leftTeam1", l1);
+		}
+		function setLeftTeam2(){
+			var l2 = document.getElementById("leftTeamTwo").value;
+			
+			localStorage.setItem("leftTeam2", l2);
+			
+		}
+	</script>
+</body>
+	<input id="rightTeamOne" type="text"></input>
+	<button class="buttonRED" onclick="setRightTeam1();">Add Right Team</button>
+	<input id="rightTeamTwo" type="text"></input>
+	<button class="buttonRED" onclick="setRightTeam2();">Add Right Team</button>
+	<input id="leftTeamOne" type="text"></input>
+	<button class="buttonBLUE" onclick="setLeftTeam1();">Add Left Team</button>
+	<input id="leftTeamTwo" type="text"></input>
+	<button class="buttonBLUE" onclick="setLeftTeam2();">Add Left Team</button>
+	
+	<button class="buttonRESET" onclick="resetTeams();">Reset Teams</button>
+</html>

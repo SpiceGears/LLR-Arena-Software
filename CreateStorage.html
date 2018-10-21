@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>:)</title>
+	<style>
+		#klik{
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			
+			border-radius: 20px;
+			text-align: center;
+			padding: 40px 40px;
+			cursor: pointer;
+			
+			background-color: black;
+			color: white;
+			font-size: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		function Create(){
+		localStorage.setItem("redBallsBlueTeam", 0);
+        localStorage.setItem("blueBallsBlueTeam", 0);
+        localStorage.setItem("iloscCubowBlueTeam", 0);
+        localStorage.setItem("punktyKarneBlueTeam", 0);
+        localStorage.setItem("zaparkowaneRobotyBlueTeam", 0);
+		localStorage.setItem("countBlue", 0);
+		localStorage.setItem("cubePointsBlue", 0);
+		localStorage.removeItem('resetB');
+		localStorage.removeItem('resetR');
+		localStorage.setItem("pointsB", 0);
+		localStorage.setItem("redBallsRedTeam", 0);
+        localStorage.setItem("blueBallsRedTeam", 0);
+        localStorage.setItem("iloscCubowRedTeam", 0);
+        localStorage.setItem("punktyKarneRedTeam", 0);
+        localStorage.setItem("zaparkowaneRobotyRedTeam", 0);
+		localStorage.setItem("BluePointsPerSecond", 0);
+        refreshPoints();
+		localStorage.setItem("cubePointsRed", 0);
+		localStorage.setItem("pointsR", 0);
+		localStorage.setItem("rightTeam1", 0);
+		localStorage.setItem("rightTeam2", 0);
+		localStorage.setItem("leftTeam1", 0);
+		localStorage.setItem("leftTeam2", 0);
+		
+		}
+	</script>
+
+	<button id="klik" onclick="Create();">       :)         </button>
+</body>
+
+</html>

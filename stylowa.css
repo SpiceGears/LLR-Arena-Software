@@ -1,0 +1,198 @@
+body{
+	background-image:url("tlo2.jpg");
+	margin: 0px;
+}
+
+#Con{
+	margin-left:  		auto;
+	margin-right: 		auto;
+	margin-top:   		auto;
+	margin-bottom:		auto;
+	
+	width: 				808px;
+}
+
+/*#Table{
+	border-width:		1px 1px 1px 1px;
+	border-style:		solid;
+	border-color:		black;
+}*/
+
+#Allies{
+	margin-top: 		41px;
+	margin-bottom: 		auto;
+	
+	//border-width:		1px 0px 1px 2px;
+	//border-style:		solid;
+	//border-color:		white;
+	
+	float: 				left;
+}
+
+#Team1{
+	background-color: 	lightgray;
+	font-family:		Arial;
+	
+	text-align:   		center;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	font-size: 			25px;
+	line-height: 		43px;
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+	
+	border-width:		2px 0px 1px 2px;
+	border-style:		solid;
+	border-color:		white;
+	
+	width: 				200px;
+	height:				45px;
+}
+
+#Team2{
+	background-color: 	lightgray;
+	font-family:		Arial;
+	
+	text-align:   		center;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	font-size: 			25px;
+	line-height: 		43px;
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+	
+	border-width:		1px 0px 2px 2px;
+	border-style:		solid;
+	border-color:		white;
+	
+	width: 				200px;
+	height:				45px;
+}
+
+#Team3{
+	background-color: 	lightgray;
+	font-family:		Arial;
+	
+	text-align:   		center;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	font-size: 			25px;
+	line-height: 		43px;
+	border-top-right-radius: 35px;
+	border-bottom-right-radius: 35px;
+	
+	border-width:		2px 2px 1px 0px;
+	border-style:		solid;
+	border-color:		white;
+	
+	width: 				200px;
+	height:				45px;
+}
+
+#Team4{
+	background-color: 	lightgray;
+	font-family:		Arial;
+	
+	text-align:   		center;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	font-size: 			25px;
+	line-height: 		43px;
+	border-top-right-radius: 35px;
+	border-bottom-right-radius: 35px;
+	
+	border-width:		1px 2px 2px 0px;
+	border-style:		solid;
+	border-color:		white;
+	
+	width: 				200px;
+	height:				45px;
+}
+#Middle{
+	float: left;
+}
+
+#time{
+	text-align:   		center;
+	
+	width: 				400px;
+	height:				70px;
+	
+	background-color:	green;
+	//background-image: 	url("green.jpg");
+	border-width:		2px 2px 1px 2px;
+	border-style:		solid;
+	border-color:		white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	
+	line-height: 		72px;
+	font-size: 			60px;
+	
+	text-align:   		center;
+	font-family:		Arial;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+
+	
+}
+
+#PointsRed{
+	background-color: red;
+	//background-image: 	url("red.jpg");
+	
+	text-align:   		center;
+	font-family:		Arial;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	
+	border-width:		1px 1px 2px 2px;
+	border-style:		solid;
+	border-color:		white;
+	line-height: 		90px;
+	font-size: 			50px;
+	border-bottom-left-radius: 10px;
+	
+	width:				199px;
+	height:				100px;
+	
+	float: 				left;
+}
+
+#PointsBlue{
+	background-color:	#0033ff;
+	//background-image: 	url("blue.jpg");
+	
+	text-align:   		center;
+	font-family:		Arial;
+	color: 				white;
+	text-shadow: 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	
+	border-width:		1px 2px 2px 1px;
+	border-style:		solid;
+	border-color:		white;
+	line-height: 		90px;
+	font-size: 			50px;
+	border-bottom-right-radius: 10px;
+	
+	width:				199px;
+	height:				100px;
+	
+	float: 				left;
+}
+
+#footer{
+	background-image:	url("niceWhite.png");
+	height: 			50px;
+	position: relative;
+	top: 15px;
+	
+	border-width:		3px 0px 3px 0px;
+	border-style:		solid;
+	border-color:		white;
+	
+}
+
+#FloatEnd{
+	clear: both;
+}
