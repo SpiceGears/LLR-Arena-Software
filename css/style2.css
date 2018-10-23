@@ -1,6 +1,6 @@
 body
 {
-	background-image: url("Sorce/Sponsory.png");
+	background-image: url("Sorce/tło.png");
 	margin: 0px;
 	font-family: Arial;
 }
@@ -18,13 +18,7 @@ body
 	opacity: 1;
 	
 	height: 100vh; */
-	width: 100vh;
-}
-
-#Container
-{
-	
-	
+	width: 1005px;
 }
 
 #Top
@@ -41,9 +35,92 @@ body
 
 #Bottom
 {	
-	margin-left:5vh;
-	margin-right: 5vh;
-	padding-top: 10vh;
+	//margin-left:5vh;
+	//margin-right: 5vh;
+	//padding-top: 5vh;
+}
+
+#LEWO{
+	background-color: #cdcdcd;
+	
+	width: 150px;
+	height: 200px;
+	
+	border: 10px solid red;
+	border-right: 0px;
+	
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 131px;
+	
+	float: left;
+}
+
+#LEWO1{
+	height: 100px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#LEWO2{
+	height: 100px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+#PRAWO{
+	background-color: #cdcdcd;
+	
+	width: 150px;
+	height: 200px;
+	
+	border: 10px solid blue;
+	border-left: 0px;
+	
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 131px;
+	
+	float: left;
+}
+
+#PRAWO1{
+	height: 100px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+}
+
+#PRAWO2{
+	height: 100px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
 }
 
 #BottomL
@@ -53,7 +130,11 @@ body
 	float: left;
 	font-weight: 550;
 	
-	width: 44vh;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	
+	width: 335px;
 }
 
 #BottomL2
@@ -63,7 +144,7 @@ body
 
 .PionPrzed
 {
-	width: 2vh;
+	width: 15px;
 	height: 1px;
 	
 	float: left;
@@ -71,12 +152,16 @@ body
 
 #BottomR
 {
-	background-color: #3300ff;
+	background-color: blue;
 	margin-left: auto;
 	float: left;
 	font-weight: 550;
 	
-	width: 44vh;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	
+	width: 335px;
 }
 
 #BottomR2
@@ -110,11 +195,14 @@ body
 	padding-bottom: 1px;
 	padding-left: 8px;
 	
-	width: 36vh;
+	width: 270px;
 	height: 30px;
 	
 	font-family: Arial;
 	font-size: 20px;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 	
 	float: left;
 }
@@ -125,14 +213,78 @@ body
 	padding-bottom: 1px;
 	padding-left: 8px;
 	
-	width: 36vh;
+	width: 270px;
 	height: 30px;
 	
 	font-family: Arial;
 	font-size: 20px;
 	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
 	float: left;
 }
+
+#PunktyPodsumowanie1{
+	background-color: #cdcdcd;
+	
+	width: 125px;
+	height: 83px;
+	
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;	
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	
+	border: 2px solid black;
+	
+	margin-left: 91px;
+    margin-right: 91px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	line-height: 85px;
+	
+	font-weight: normal;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+	
+	float: left;
+}
+
+#PunktyPodsumowanie2{
+	background-color: #cdcdcd;
+	
+	width: 125px;
+	height: 83px;
+	
+	
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;	
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	
+	
+	border: 2px solid black;
+	
+	margin-left: 91px;
+    margin-right: 91px;
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 50px;
+	line-height: 85px;
+	
+	font-weight: normal;
+	
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+	
+	float: left;
+}
+
 #PunktyR1{
 	
 	background-color: #999999;
@@ -140,8 +292,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -157,8 +312,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -174,8 +332,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -191,8 +352,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -208,8 +372,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -225,8 +392,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;	
+	width: 28px;	
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -242,8 +412,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;
+	width: 28px;
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -259,8 +432,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;
+	width: 28px;
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -276,8 +452,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;
+	width: 28px;
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -293,8 +472,11 @@ body
     padding-left: 2px;
     padding-top: 6px;
 	
-	width: 3.2vh;
+	width: 28px;
 	height: 30px;
+	
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	
 	text-align: center;
 	font-family: Arial;
@@ -317,4 +499,9 @@ body
 	height: 4px;
 	
 	clear: both;
+}
+
+#footer{
+	margin-bottom: 0px;
+	margin-top: auto;
 }
