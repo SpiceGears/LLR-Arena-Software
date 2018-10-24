@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>BLUE</title>
+  <script src="jquery-3.3.1.js"></script>
 <style>
 body{
 font-size: 20px;
@@ -52,6 +53,8 @@ background-color: #d9d9d9;
       var cubesBlueTeam = 0;
       var parkedRobotsBlueTeam = 0;
 	  var secondPointsBlueTeam = 0;
+	  var test = 10;
+	  NetworkTables.setValue('/SmartDashBoard/')
 
       /*function refreshPoints(){
         redBalls = localStorage.redBallsBlueTeam;
@@ -72,7 +75,7 @@ background-color: #d9d9d9;
           redBalls--;
           document.getElementById('redBalls').value = redBalls;
 		  var D = 1;
-		  NetworkTables.putValue(D);
+		  NetworkTables.setValue(D);
       }
       function buttonRedPlus() {
           redBalls++;

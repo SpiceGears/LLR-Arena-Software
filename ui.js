@@ -56,6 +56,10 @@ let ui = {
 
 };
 
+NetworkTables.addRobotConnectionListener(onRobotConnection, true);
+
+NetworkTables.addGlobalListener(onValueChanged, true);
+
 // Key Listeners
 
 function onRobotConnection(connected) {
