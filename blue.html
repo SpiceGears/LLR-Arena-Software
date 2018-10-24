@@ -70,14 +70,14 @@ background-color: #d9d9d9;
       }*/
       function buttonRedMinus() {
           redBalls--;
-          localStorage.setItem("redBallsBlueTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
-		  NetworkTables.putValue(redBallsBlueTeam);
+		  var D = 1;
+		  NetworkTables.putValue(D);
       }
       function buttonRedPlus() {
           redBalls++;
-          localStorage.setItem("redBallsBlueTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
+		  NetworkTables.putValue(redBallsBlueTeam);
       }
       function buttonBlueMinus() {
           blueBalls--;
