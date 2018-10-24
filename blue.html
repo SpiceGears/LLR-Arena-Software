@@ -46,14 +46,14 @@ background-color: #d9d9d9;
 <body>
   <script>
 	  var reset = 0;
-      var redBalls = localStorage.redBallsBlueTeam;
-      var blueBalls = localStorage.blueBallsBlueTeam;
-      var punktyKarne = localStorage.punktyKarneBlueTeam;
-      var iloscCubow = localStorage.iloscCubowBlueTeam;
-      var zaparkowaneRoboty = localStorage.zaparkowaneRobotyBlueTeam;
-	  var countBlue = localStorage.getItem("countBlue");
+      var redBallsBlueTeam = 0;
+      var blueBallsBlueTeam = 0;
+      var faulesBlueTeam = 0;
+      var cubesBlueTeam = 0;
+      var parkedRobotsBlueTeam = 0;
+	  var secondPointsBlueTeam = 0;
 
-      function refreshPoints(){
+      /*function refreshPoints(){
         redBalls = localStorage.redBallsBlueTeam;
         blueBalls = localStorage.blueBallsBlueTeam;
         punktyKarne = localStorage.punktyKarneBlueTeam;
@@ -67,11 +67,12 @@ background-color: #d9d9d9;
         document.getElementById('iloscCubow').value = iloscCubow;
         document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
 
-      }
+      }*/
       function buttonRedMinus() {
           redBalls--;
           localStorage.setItem("redBallsBlueTeam", redBalls);
           document.getElementById('redBalls').value = redBalls;
+		  NetworkTables.putValue(redBallsBlueTeam);
       }
       function buttonRedPlus() {
           redBalls++;
@@ -127,16 +128,12 @@ background-color: #d9d9d9;
 		reset++;
 		if(reset == 2){
 		reset = 0;
-        localStorage.setItem("redBallsBlueTeam", 0);
-        localStorage.setItem("blueBallsBlueTeam", 0);
-        localStorage.setItem("iloscCubowBlueTeam", 0);
-        localStorage.setItem("punktyKarneBlueTeam", 0);
-        localStorage.setItem("zaparkowaneRobotyBlueTeam", 0);
-		localStorage.setItem("countBlue", 0);
-		localStorage.setItem("cubePointsBlue", 0);
-		localStorage.removeItem('resetB');
-		localStorage.setItem("pointsB", 0);
-		refreshPoints();
+        redBallsBlueTeam = 0;
+        blueBallsBlueTeam = 0;
+        cubesBlueTeam = 0;
+        faulesBlueTeam = 0;
+        parkedRobotsBlueTeam = 0;
+		secondPointsBlueTeam = 0;
 		}
       }  
   </script>
