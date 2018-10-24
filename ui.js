@@ -10,12 +10,6 @@ let ui = {
         arm: document.getElementById('gyro-arm'),
         number: document.getElementById('gyro-number')
     },
-    redTeam: {
-        redBalls: document.getElementById('')
-    },
-    robotDiagram: {
-        arm: document.getElementById('robot-arm')
-    },
     example: {
         button: document.getElementById('example-button'),
         readout: document.getElementById('example-readout').firstChild
@@ -23,14 +17,43 @@ let ui = {
 	examplesecond: {
         readoutsecond: document.getElementById('example-readoutsecond').firstChild
     },
-	crossRed: {
-        crossreadoutRed: document.getElementById('cross-readoutRed').firstChild
+	redBallsRedTeam: {
+        readout: document.getElementById('redBallsRedTeam').firstChild
     },
-	crossBlue: {
-        crossreadoutBlue: document.getElementById('cross-readoutBlue').firstChild
+	blueBallsRedTeam: {
+        readout: document.getElementById('blueBallsRedTeam').firstChild
     },
-    autoSelect: document.getElementById('auto-select'),
-    armPosition: document.getElementById('arm-position')
+	cubesRedTeam: {
+        readout: document.getElementById('cubesRedTeam').firstChild
+    },
+	faulesRedTeam: {
+        readout: document.getElementById('faulesRedTeam').firstChild
+    },
+	secondPointsRedTeam: {
+        readout: document.getElementById('secondPointsRedTeam').firstChild
+    },
+	parkedRobotsRedTeam: {
+        readout: document.getElementById('parkedRobotsRedTeam').firstChild
+    },
+	redBallsBlueTeam: {
+        readout: document.getElementById('redBallsBlueTeam').firstChild
+    },
+	blueBallsBlueTeam: {
+        readout: document.getElementById('blueBallsBlueTeam').firstChild
+    },
+	cubesBlueTeam: {
+        readout: document.getElementById('cubesBlueTeam').firstChild
+    },
+	faulesBlueTeam: {
+        readout: document.getElementById('faulesBlueTeam').firstChild
+    },
+	secondPointsBlueTeam: {
+        readout: document.getElementById('secondPointsBlueTeam').firstChild
+    },
+	parkedRobotsBlueTeam: {
+        readout: document.getElementById('parkedRobotsBlueTeam').firstChild
+    },
+
 };
 
 // Key Listeners
@@ -45,16 +68,52 @@ function onRobotConnection(connected) {
 
 
 // This button is just an example of triggering an event on the robot by clicking a button.
-NetworkTables.addKeyListener('/SmartDashboard/randomNumber', (key, value) => {
-    ui.example.readout.data = ' ' + value;
+NetworkTables.addKeyListener('/SmartDashboard/redBallsRedTeam', (key, value) => {
+    ui.redBallsRedTeam.readout.data =  value;
 });
 
-NetworkTables.addKeyListener('/SmartDashboard/limitSwitch1', (key, value) => {
-    ui.crossRed.crossreadoutRed.data = value;
+NetworkTables.addKeyListener('/SmartDashboard/blueBallsRedTeam', (key, value) => {
+    ui.blueBallsRedTeam.readout.data = value;
 });
 
-NetworkTables.addKeyListener('/SmartDashboard/limitSwitch2', (key, value) => {
-    ui.crossBlue.crossreadoutBlue.data = value;
+NetworkTables.addKeyListener('/SmartDashboard/cubesRedTeam', (key, value) => {
+    ui.cubesRedTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/faulesRedTeam', (key, value) => {
+    ui.faulesRedTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/secondPointsRedTeam', (key, value) => {
+    ui.secondPointsRedTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeam', (key, value) => {
+    ui.parkedRobotsRedTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/redBallsBlueTeam', (key, value) => {
+    ui.redBallsBlueTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/blueBallsBlueTeam', (key, value) => {
+    ui.blueBallsBlueTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/cubesBlueTeam', (key, value) => {
+    ui.cubesBlueTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/secondPointsBlueTeam', (key, value) => {
+    ui.secondPointsBlueTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/faulesBlueTeam', (key, value) => {
+    ui.faulesBlueTeam.readout.data = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeam', (key, value) => {
+    ui.parkedRobotsBlueTeam.readout.data = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/Timer', (key, value) => {
