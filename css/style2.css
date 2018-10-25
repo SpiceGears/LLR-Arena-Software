@@ -225,7 +225,7 @@ body
 	float: left;
 }
 
-#PunktyPodsumowanie1{
+#finalScoreRed{
 	background-color: #cdcdcd;
 	
 	width: 125px;
@@ -254,7 +254,7 @@ body
 	float: left;
 }
 
-#PunktyPodsumowanie2{
+#finalScoreBlue{
 	background-color: #cdcdcd;
 	
 	width: 125px;
