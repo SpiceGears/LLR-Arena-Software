@@ -285,7 +285,7 @@ body
 	float: left;
 }
 
-#PunktyR1{
+#PredBallsRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -305,7 +305,7 @@ body
 	float: left;
 }
 
-#PunktyR11{
+#cubesRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -325,7 +325,7 @@ body
 	float: left;
 }
 
-#PunktyR111{
+#faulesRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -405,7 +405,7 @@ body
 	float: left;
 }
 
-#PunktyR2{
+#blueBallsRedTeam{
 	
 	background-color: #cdcdcd;
     padding-right: 2px;
