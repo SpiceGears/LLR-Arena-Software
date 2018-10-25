@@ -6,7 +6,7 @@
 		<script>
 		function on(){
 			var Test = "no dzialaj";
-			NetworkTables.setValue('/SmartDashboard/test', Test);
+			NetworkTables.setValue('test', Test);
 			document.getElementById("test").innerHTML = Test;
 		
 			setTimeout("on()", 1000); 
