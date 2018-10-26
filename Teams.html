@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Teams</title>
-	<meta http-equiv="X-UA-Compatible=" content="IE=edge chrome=1" />
 	<style>
 		.buttonRED{
 			background-color: red;
@@ -25,15 +24,11 @@
 			color: white;
 		}
 	</style>
-	<script src="networktables/networktables.js"></script>
+
 </head>
 	
 <body>
 	<script>
-		NetworkTables.putValue('/SmartDashboard/Team1', "Team1");
-		NetworkTables.putValue('/SmartDashboard/Team2', "Team2");
-		NetworkTables.putValue('/SmartDashboard/Team3', "Team3");
-		NetworkTables.putValue('/SmartDashboard/Team4', "Team4");
 			
 		function resetTeams(){
 			NetworkTables.putValue('/SmartDashboard/Team1', "Team1");
@@ -43,24 +38,24 @@
 		}
 		
 		function setRightTeam1(){
-			var r1 = document.getElementById("rightTeamOne").value;
+			var r1 = document.getElementById('rightTeamOne').value;
 			
-			NetworkTables.putValue('/SmartDashboard/Team1', parseString(r1));
+			NetworkTables.putValue('/SmartDashboard/Team1', r1);
 		}
 		function setRightTeam2(){
-			var r2 = document.getElementById("rightTeamTwo").value;
+			var r2 = document.getElementById('rightTeamTwo').value;
 			
-			NetworkTables.putValue('/SmartDashboard/Team2', parseString(r2));
+			NetworkTables.putValue('/SmartDashboard/Team2', r2);
 		}
 		function setLeftTeam1(){
-			var l1 = document.getElementById("leftTeamOne").value;
+			var l1 = document.getElementById('leftTeamOne').value;
 			
-			NetworkTables.putValue('/SmartDashboard/Team3', parseString(l1));
+			NetworkTables.putValue('/SmartDashboard/Team3', l1);
 		}
 		function setLeftTeam2(){
-			var l2 = document.getElementById("leftTeamTwo").value;
+			var l2 = document.getElementById('leftTeamTwo').value;
 			
-			NetworkTables.putValue('/SmartDashboard/Team4', parseString(l2));
+			NetworkTables.putValue('/SmartDashboard/Team4', l2);
 			
 		}
 	</script>
@@ -75,4 +70,6 @@
 	<button class="buttonBLUE" onclick="setLeftTeam2();">Add Left Team</button>
 	
 	<button class="buttonRESET" onclick="resetTeams();">Reset Teams</button>
+	
+	<script src="networktables/networktables.js"></script>
 </html>

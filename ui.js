@@ -17,6 +17,15 @@ var ui = {
 	examplesecond: {
         readoutsecond: document.getElementById('example-readoutsecond')
     },
+	
+	team1: document.getElementById('Team1'),
+	
+	team2: document.getElementById('Team2'),
+	
+	team3: document.getElementById('Team3'),
+	
+	team4: document.getElementById('Team4'),
+	
 	blueScore: document.getElementById('PointsBlue'),
 	
 	redScore: document.getElementById('PointsRed'),
@@ -124,6 +133,22 @@ NetworkTables.addKeyListener('/SmartDashboard/faulesBlueTeam', (key, value) => {
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeam', (key, value) => {
     ui.parkedRobotsBlueTeam.readout.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/Team1', (key, value) => {
+    ui.team1.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/Team2', (key, value) => {
+    ui.team2.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/Team3', (key, value) => {
+    ui.team3.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/Team4', (key, value) => {
+    ui.team4.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/timer', (key, value) => {
