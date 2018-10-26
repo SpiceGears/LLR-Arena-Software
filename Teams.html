@@ -25,37 +25,42 @@
 			color: white;
 		}
 	</style>
+	<script src="networktables/networktables.js"></script>
 </head>
 	
 <body>
 	<script>
-		
+		NetworkTables.putValue('/SmartDashboard/Team1', "Team1");
+		NetworkTables.putValue('/SmartDashboard/Team2', "Team2");
+		NetworkTables.putValue('/SmartDashboard/Team3', "Team3");
+		NetworkTables.putValue('/SmartDashboard/Team4', "Team4");
+			
 		function resetTeams(){
-			localStorage.setItem("rightTeam1", 0);
-			localStorage.setItem("rightTeam2", 0);
-			localStorage.setItem("leftTeam1", 0);
-			localStorage.setItem("leftTeam2", 0);
+			NetworkTables.putValue('/SmartDashboard/Team1', "Team1");
+			NetworkTables.putValue('/SmartDashboard/Team2', "Team2");
+			NetworkTables.putValue('/SmartDashboard/Team3', "Team3");
+			NetworkTables.putValue('/SmartDashboard/Team4', "Team4");
 		}
 		
 		function setRightTeam1(){
 			var r1 = document.getElementById("rightTeamOne").value;
 			
-			localStorage.setItem("rightTeam1", r1);
+			NetworkTables.putValue('/SmartDashboard/Team1', parseString(r1));
 		}
 		function setRightTeam2(){
 			var r2 = document.getElementById("rightTeamTwo").value;
 			
-			localStorage.setItem("rightTeam2", r2);
+			NetworkTables.putValue('/SmartDashboard/Team2', parseString(r2));
 		}
 		function setLeftTeam1(){
 			var l1 = document.getElementById("leftTeamOne").value;
 			
-			localStorage.setItem("leftTeam1", l1);
+			NetworkTables.putValue('/SmartDashboard/Team3', parseString(l1));
 		}
 		function setLeftTeam2(){
 			var l2 = document.getElementById("leftTeamTwo").value;
 			
-			localStorage.setItem("leftTeam2", l2);
+			NetworkTables.putValue('/SmartDashboard/Team4', parseString(l2));
 			
 		}
 	</script>

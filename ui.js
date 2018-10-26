@@ -1,7 +1,7 @@
 // Define UI elements
-let ui = {
+var ui = {
     timer: document.getElementById('timer'),
-    robotState: document.getElementById('robot-state').firstChild,
+    robotState: document.getElementById('robot-state'),
     gyro: {
         container: document.getElementById('gyro'),
         val: 0,
@@ -12,53 +12,53 @@ let ui = {
     },
     example: {
         button: document.getElementById('example-button'),
-        readout: document.getElementById('example-readout').firstChild
+        readout: document.getElementById('example-readout')
     },
 	examplesecond: {
-        readoutsecond: document.getElementById('example-readoutsecond').firstChild
+        readoutsecond: document.getElementById('example-readoutsecond')
     },
+	blueScore: document.getElementById('PointsBlue'),
+	
+	redScore: document.getElementById('PointsRed'),
+	
 	redBallsRedTeam: {
-        readout: document.getElementById('redBallsRedTeam').firstChild
+        readout: document.getElementById('redBallsRedTeam')
     },
 	blueBallsRedTeam: {
-        readout: document.getElementById('blueBallsRedTeam').firstChild
+        readout: document.getElementById('blueBallsRedTeam')
     },
 	cubesRedTeam: {
-        readout: document.getElementById('cubesRedTeam').firstChild
+        readout: document.getElementById('cubesRedTeam')
     },
 	faulesRedTeam: {
-        readout: document.getElementById('faulesRedTeam').firstChild
+        readout: document.getElementById('faulesRedTeam')
     },
 	secondPointsRedTeam: {
-        readout: document.getElementById('secondPointsRedTeam').firstChild
+        readout: document.getElementById('secondPointsRedTeam')
     },
 	parkedRobotsRedTeam: {
-        readout: document.getElementById('parkedRobotsRedTeam').firstChild
+        readout: document.getElementById('parkedRobotsRedTeam')
     },
 	redBallsBlueTeam: {
-        readout: document.getElementById('redBallsBlueTeam').firstChild
+        readout: document.getElementById('redBallsBlueTeam')
     },
 	blueBallsBlueTeam: {
-        readout: document.getElementById('blueBallsBlueTeam').firstChild
+        readout: document.getElementById('blueBallsBlueTeam')
     },
 	cubesBlueTeam: {
-        readout: document.getElementById('cubesBlueTeam').firstChild
+        readout: document.getElementById('cubesBlueTeam')
     },
 	faulesBlueTeam: {
-        readout: document.getElementById('faulesBlueTeam').firstChild
+        readout: document.getElementById('faulesBlueTeam')
     },
 	secondPointsBlueTeam: {
-        readout: document.getElementById('secondPointsBlueTeam').firstChild
+        readout: document.getElementById('secondPointsBlueTeam')
     },
 	parkedRobotsBlueTeam: {
-        readout: document.getElementById('parkedRobotsBlueTeam').firstChild
+        readout: document.getElementById('parkedRobotsBlueTeam')
     },
 
 };
-
-NetworkTables.addRobotConnectionListener(onRobotConnection, true);
-
-NetworkTables.addGlobalListener(onValueChanged, true);
 
 // Key Listeners
 
@@ -67,63 +67,69 @@ function onRobotConnection(connected) {
 	console.log(state);
 	ui.robotState.innerHTML = state;
 }
-//OUR LLR CODE
-
 
 
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/redBallsRedTeam', (key, value) => {
-    ui.redBallsRedTeam.readout.data =  value;
+    ui.redBallsRedTeam.readout.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/scoreBlue', (key, value) => {
+	ui.blueScore.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/scoreRed', (key, value) => {
+	ui.redScore.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/blueBallsRedTeam', (key, value) => {
-    ui.blueBallsRedTeam.readout.data = value;
+    ui.blueBallsRedTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/cubesRedTeam', (key, value) => {
-    ui.cubesRedTeam.readout.data = value;
+    ui.cubesRedTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/faulesRedTeam', (key, value) => {
-    ui.faulesRedTeam.readout.data = value;
+    ui.faulesRedTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/secondPointsRedTeam', (key, value) => {
-    ui.secondPointsRedTeam.readout.data = value;
+    ui.secondPointsRedTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeam', (key, value) => {
-    ui.parkedRobotsRedTeam.readout.data = value;
+    ui.parkedRobotsRedTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/redBallsBlueTeam', (key, value) => {
-    ui.redBallsBlueTeam.readout.data = value;
+    ui.redBallsBlueTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/blueBallsBlueTeam', (key, value) => {
-    ui.blueBallsBlueTeam.readout.data = value;
+    ui.blueBallsBlueTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/cubesBlueTeam', (key, value) => {
-    ui.cubesBlueTeam.readout.data = value;
+    ui.cubesBlueTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/secondPointsBlueTeam', (key, value) => {
-    ui.secondPointsBlueTeam.readout.data = value;
+    ui.secondPointsBlueTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/faulesBlueTeam', (key, value) => {
-    ui.faulesBlueTeam.readout.data = value;
+    ui.faulesBlueTeam.readout.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeam', (key, value) => {
-    ui.parkedRobotsBlueTeam.readout.data = value;
+    ui.parkedRobotsBlueTeam.readout.innerHTML = value;
 });
 
-NetworkTables.addKeyListener('/SmartDashboard/Timer', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/timer', (key, value) => {
     // This is an example of how a dashboard could display the remaining time in a match.
     // We assume here that value is an integer representing the number of seconds left.
-    ui.timer.innerHTML = value < 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+    ui.timer.innerHTML = parseInt(value) < 0 ? '0:00' : Math.floor(parseInt(value) / 60) + ':' + (parseInt(value) % 60 < 10 ? '0' : '') + parseInt(value) % 60;
 });
 
 // Load list of prewritten autonomous modes

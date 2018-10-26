@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>BLUE</title>
-  <script src="jquery-3.3.1.js"></script>
 <style>
 body{
 font-size: 20px;
@@ -54,31 +53,32 @@ background-color: #d9d9d9;
       var cubesBlueTeam = 0;
       var parkedRobotsBlueTeam = 0;
 	  var secondPointsBlueTeam = 0;
-
-      /*function refreshPoints(){
-        redBalls = localStorage.redBallsBlueTeam;
-        blueBalls = localStorage.blueBallsBlueTeam;
-        punktyKarne = localStorage.punktyKarneBlueTeam;
-        iloscCubow = localStorage.iloscCubowBlueTeam;
-        zaparkowaneRoboty = localStorage.zaparkowaneRobotyBlueTeam;
-		countBlue = localStorage.getItem("countBlue");
+	  
+	NetworkTables.putValue('/SmartDashboard/redBallsBlueTeam', redBallsBlueTeam);
+	NetworkTables.putValue('/SmartDashboard/blueBallsBlueTeam', blueBallsBlueTeam);
+	NetworkTables.putValue('/SmartDashboard/faulesBlueTeam', faulesBlueTeam);
+	NetworkTables.putValue('/SmartDashboard/cubesBlueTeam', cubesBlueTeam);
+	NetworkTables.putValue('/SmartDashboard/parkedRobotsBlueTeam', parkedRobotsBlueTeam);
+	NetworkTables.putValue('/SmartDashboard/secondPointsBlueTeam', secondPointsBlueTeam);
+    function refreshPoints(){
+        
+		document.getElementById('redBalls').value = redBallsBlueTeam;
+        document.getElementById('blueBalls').value = blueBallsBlueTeam;
+        document.getElementById('punktyKarne').value = faulesBlueTeam;
+        document.getElementById('iloscCubow').value = cubesBlueTeam;
+        document.getElementById('zaparkowaneRoboty').value = parkedRobotsBlueTeam;
 		
-        document.getElementById('redBalls').value = redBalls;
-        document.getElementById('blueBalls').value = blueBalls;
-        document.getElementById('punktyKarne').value = punktyKarne;
-        document.getElementById('iloscCubow').value = iloscCubow;
-        document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
-
-      }*/
+		setTimeout("refreshPoints()", 100);
+	}
       function buttonRedMinus() {
           redBallsBlueTeam--;
           document.getElementById('redBalls').value = redBallsBlueTeam;
-		  NetworkTables.setValue('/SmartDashboard/redBallsBlueTeam', redBallsBlueTeam);
+		  NetworkTables.putValue('/SmartDashboard/redBallsBlueTeam', redBallsBlueTeam);
       }
       function buttonRedPlus() {
           redBallsBlueTeam++;
           document.getElementById('redBalls').value = redBallsBlueTeam;
-		  NetworkTables.setValue('/SmartDashboard/redBallsBlueTeam', redBallsBlueTeam);
+		  NetworkTables.putValue('/SmartDashboard/redBallsBlueTeam', redBallsBlueTeam);
       }
       function buttonBlueMinus() {
           blueBallsBlueTeam--;;
@@ -123,15 +123,17 @@ background-color: #d9d9d9;
           document.getElementById('zaparkowaneRoboty').value = parkedRobotsBlueTeam;
 		  NetworkTables.putValue('/SmartDashboard/parkedRobotsBlueTeam', parkedRobotsBlueTeam);
       }
-      function resetRedScore(){
+      function resetBlueScore(){
 		reset++;
 		if(reset == 2){
 		reset = 0;
-        redBallsBlueTeam = 0;
-        blueBallsBlueTeam = 0;
-        cubesBlueTeam = 0;
-        faulesBlueTeam = 0;
-        parkedRobotsBlueTeam = 0;
+        NetworkTables.putValue('/SmartDashboard/redBallsBlueTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/blueBallsBlueTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/cubesBlueTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/faulesBlueTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/parkedRobotsBlueTeam', 0);
+		NetworkTables.putValue('/SmartDashboard/secondPointsBlueTeam', 0);
+		location.reload();
 		}
       }  
   </script>
@@ -162,7 +164,7 @@ background-color: #d9d9d9;
 <button class="buttonGREEN" onclick="zaparkowaneRobotyPlus();">PLUS</button>
 
 <h2>Reset blue score</h2>
-<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>
+<button class="buttonRESET" onclick="resetBlueScore();">Reset match</button>
 
 </center>
 

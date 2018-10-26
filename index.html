@@ -2,109 +2,27 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Lubelskie: Liga robotyki</title>
     <link rel="stylesheet" href="stylowa.css" type="text/css"/>
+
+</head>
+<body>
+
 	<script>
-      var redBallsRedTeam = localStorage.getItem("redBallsRedTeam");
-      var blueBallsRedTeam = localStorage.getItem("blueBallsRedTeam");
-      var iloscCubowRedTeam = localStorage.getItem("iloscCubowRedTeam");
-      var zaparkowaneRobotyRedTeam = localStorage.getItem("zaparkowaneRobotyRedTeam");
-	  var cubesR = Number(iloscCubowRedTeam);
-	  var cubePointsRed = localStorage.getItem("cubePointsRed");
-
-      var redBallsBlueTeam = localStorage.getItem("redBallsBlueTeam");
-      var blueBallsBlueTeam = localStorage.getItem("blueBallsBlueTeam");
-      var iloscCubowBlueTeam = localStorage.getItem("iloscCubowBlueTeam");
-      var zaparkowaneRobotyBlueTeam = localStorage.getItem("zaparkowaneRobotyBlueTeam");
-	  var cubesB = Number(iloscCubowBlueTeam);
-	  var cubePointsBlue = localStorage.getItem("cubePointsBlue");
-	  
-	  var r1 = localStorage.getItem("rightTeam1");
-	  var r2 = localStorage.getItem("rightTeam2");
-	  var l1 = localStorage.getItem("leftTeam1");
-	  var l2 = localStorage.getItem("leftTeam2");
-	  
-	  
-	  function refreshScore() {
-          redBallsRedTeam = localStorage.redBallsRedTeam;
-          blueBallsRedTeam = localStorage.blueBallsRedTeam;
-          iloscCubowRedTeam = localStorage.iloscCubowRedTeam;
-          zaparkowaneRobotyRedTeam = localStorage.zaparkowaneRobotyRedTeam;
-		  cubePointsRed = localStorage.getItem("cubePointsRed");
-		  cubesR = Number(iloscCubowRedTeam);
-
-          redBallsBlueTeam = localStorage.redBallsBlueTeam;
-          blueBallsBlueTeam = localStorage.blueBallsBlueTeam;
-          iloscCubowBlueTeam = localStorage.iloscCubowBlueTeam;
-          zaparkowaneRobotyBlueTeam = localStorage.zaparkowaneRobotyBlueTeam;
-		  cubePointsBlue = localStorage.getItem("cubePointsBlue");
-		  cubesB = Number(iloscCubowBlueTeam);
-		  
-		  
-		  
-		  setTimeout("refreshScore()", 0.1);
-      }
-	  function blueScore(){
-		var secondPoints = localStorage.getItem("cubePointsBlue");
-		var scoreB = Number(blueBallsBlueTeam)*2 + Number(redBallsBlueTeam) + Number(iloscCubowBlueTeam)*15 + Number(zaparkowaneRobotyBlueTeam)*30 + Number(secondPoints);
-		document.getElementById("PointsBlue").innerHTML = scoreB;
-		if(Number(iloscCubowBlueTeam) === 1 && localStorage.getItem("resetB") == null){
-			localStorage.setItem("resetB", 1);
-			location.reload()
-		}
 		
-		setTimeout("blueScore()", 10);
-	  }
-	  
-	  function redScore(){
-		var secondPointsR = localStorage.getItem("cubePointsRed");
-		var scoreR = Number(blueBallsRedTeam)*2 + Number(redBallsRedTeam) + Number(iloscCubowRedTeam)*15 + Number(zaparkowaneRobotyRedTeam)*30 + Number(secondPointsR);
-		document.getElementById("PointsRed").innerHTML = scoreR;
-		if(Number(iloscCubowRedTeam) === 1 && localStorage.getItem("resetR") == null){
-			localStorage.setItem("resetR", 1);
-			location.reload()
-		}		
-		
-		setTimeout("redScore()", 10);
-	  }
-	  
-	 var pointsB = Number(localStorage.getItem("pointsB"));
-	 function countBlue(){
-		var s = document.getElementById("timer").value;
-		if(cubesB > 0 && s !== "0:00"){
+	  var cubesBlue = NetworkTables.getValue('/SmartDashboard/cubesBlueTeam');
+	  var time = document.getElementById('timer').value;
+	  var pointsB = parseInt(NetworkTables.getValue('/SmartDashboard/secondPointsBlueTeam'));
+	  function bluePoints(){
+		if(cubesBlue > 0 && time !== "0:00"){
 			pointsB++;
-			localStorage.setItem("cubePointsBlue", pointsB);
-			localStorage.setItem("pointsB", pointsB);
-			setTimeout("countBlue()", 1000);
-		}		
-	}
-	
-	var pointsR = Number(localStorage.getItem("pointsR"));
-	function countRed(){
-		var s = document.getElementById("timer").value;
-		if(cubesR > 0 && s !== "0:00"){
-			pointsR++;
-			localStorage.setItem("cubePointsRed", pointsR);
-			localStorage.setItem("pointsR", pointsR);
-			setTimeout("countRed()", 1000);
-		}		
-	}
-	
-	function Teams(){
-		document.getElementById("Team1").innerHTML = r1;
-		document.getElementById("Team2").innerHTML = r2;
-		document.getElementById("Team3").innerHTML = l1;
-		document.getElementById("Team4").innerHTML = l2;
-		
-	}
+			NetworkTables.putValue('/SmartDashboard/secondPointsBlueTeam');
+		}
+	  }
+
 		
 	</script>
-</head>
-<body onload="Teams();refreshScore();blueScore();redScore();countBlue();countRed();">
-	
-	<div id="robot-state"></div>
-	
 	<div id="Con">
 		
 		
@@ -128,11 +46,11 @@
 			</span></div>
 			
 			<div id="PointsRed">
-				0
+				00
 			</div>
 			
 			<div id="PointsBlue">
-				0
+				00
 			</div>
 		
 		</div>
@@ -155,8 +73,8 @@
 	
 	<div id="footer"></div>
 	
-	<script src="tuning.js"></script>
-    <script src="/networktables/networktables.js"></script>
-    <script src="ui.js"></script>
+	<script src="jquery-3.3.1.js"></script>
+	<script src="/networktables/networktables.js"></script>
+	<script src="ui.js"></script>
 </body>
 </html>

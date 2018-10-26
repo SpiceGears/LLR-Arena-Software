@@ -44,7 +44,8 @@ background-color: #d9d9d9;
 }
 </style>
 </head>
-<body>
+<body onload="refreshPoints();">
+<script src="networktables/networktables.js"></script>
   <script>
 	  var reset = 0;
       var redBallsRedTeam = 0;
@@ -53,30 +54,35 @@ background-color: #d9d9d9;
       var cubesRedTeam = 0;
       var parkedRobotsRedTeam = 0;
 	  var secondPointsRedTeam = 0;
+	  
+	NetworkTables.putValue('/SmartDashboard/redBallsRedTeam', redBallsRedTeam);
+	NetworkTables.putValue('/SmartDashboard/blueBallsRedTeam', blueBallsRedTeam);
+	NetworkTables.putValue('/SmartDashboard/faulesRedTeam', faulesRedTeam);
+	NetworkTables.putValue('/SmartDashboard/cubesRedTeam', cubesRedTeam);;
+	NetworkTables.putValue('/SmartDashboard/parkedRobotsRedTeam', parkedRobotsRedTeam);
+	NetworkTables.putValue('/SmartDashboard/secondPointsRedTeam', secondPointsRedTeam);
+	  
 
-      /*function refreshPoints(){
-        redBalls = localStorage.redBallsRedTeam;
-        blueBalls = localStorage.blueBallsRedTeam;
-        punktyKarne = localStorage.punktyKarneRedTeam;
-        iloscCubow = localStorage.iloscCubowRedTeam;
-        zaparkowaneRoboty = localStorage.zaparkowaneRobotyRedTeam;
+      function refreshPoints(){
         
-		document.getElementById('redBalls').value = redBalls;
-        document.getElementById('blueBalls').value = blueBalls;
-        document.getElementById('punktyKarne').value = punktyKarne;
-        document.getElementById('iloscCubow').value = iloscCubow;
-        document.getElementById('zaparkowaneRoboty').value = zaparkowaneRoboty;
-		}*/
+		document.getElementById('redBalls').value = redBallsRedTeam;
+        document.getElementById('blueBalls').value = blueBallsRedTeam;
+        document.getElementById('punktyKarne').value = faulesRedTeam;
+        document.getElementById('iloscCubow').value = cubesRedTeam;
+        document.getElementById('zaparkowaneRoboty').value = parkedRobotsRedTeam;
+		
+		setTimeout("refreshPoints()", 100);
+		}
 		
       function buttonRedMinus() {
           redBallsRedTeam--;
           document.getElementById('redBalls').value = redBallsRedTeam;
-		  NetworkTables.setValue('/SmartDashboard/redBallsRedTeam', redBallsRedTeam);
+		  NetworkTables.putValue('/SmartDashboard/redBallsRedTeam', redBallsRedTeam);
       }
       function buttonRedPlus() {
           redBallsRedTeam++;
           document.getElementById('redBalls').value = redBallsRedTeam;
-		  NetworkTables.setValue('/SmartDashboard/redBallsRedTeam', redBallsRedTeam);
+		  NetworkTables.putValue('/SmartDashboard/redBallsRedTeam', redBallsRedTeam);
       }
       function buttonBlueMinus() {
           blueBallsRedTeam--;;
@@ -125,11 +131,13 @@ background-color: #d9d9d9;
 		reset++;
 		if(reset == 2){
 		reset = 0;
-        redBallsRedTeam = 0;
-        blueBallsRedTeam = 0;
-        cubesRedTeam = 0;
-        faulesRedTeam = 0;
-        parkedRobotsRedTeam = 0;
+        NetworkTables.putValue('/SmartDashboard/redBallsRedTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/blueBallsRedTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/cubesRedTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/faulesRedTeam', 0);
+        NetworkTables.putValue('/SmartDashboard/parkedRobotsRedTeam', 0);
+		NetworkTables.putValue('/SmartDashboard/secondPointsRedTeam', 0);
+		location.reload();
 		}
       } 
   </script>
