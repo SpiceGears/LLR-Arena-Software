@@ -30,42 +30,30 @@ var ui = {
 	
 	redScore: document.getElementById('PointsRed'),
 	
-	redBallsRedTeam: {
-        readout: document.getElementById('redBallsRedTeam')
-    },
-	blueBallsRedTeam: {
-        readout: document.getElementById('blueBallsRedTeam')
-    },
-	cubesRedTeam: {
-        readout: document.getElementById('cubesRedTeam')
-    },
-	faulesRedTeam: {
-        readout: document.getElementById('faulesRedTeam')
-    },
-	secondPointsRedTeam: {
-        readout: document.getElementById('secondPointsRedTeam')
-    },
-	parkedRobotsRedTeam: {
-        readout: document.getElementById('parkedRobotsRedTeam')
-    },
-	redBallsBlueTeam: {
-        readout: document.getElementById('redBallsBlueTeam')
-    },
-	blueBallsBlueTeam: {
-        readout: document.getElementById('blueBallsBlueTeam')
-    },
-	cubesBlueTeam: {
-        readout: document.getElementById('cubesBlueTeam')
-    },
-	faulesBlueTeam: {
-        readout: document.getElementById('faulesBlueTeam')
-    },
-	secondPointsBlueTeam: {
-        readout: document.getElementById('secondPointsBlueTeam')
-    },
-	parkedRobotsBlueTeam: {
-        readout: document.getElementById('parkedRobotsBlueTeam')
-    },
+	redBallsRedTeam: document.getElementById('redBallsRedTeam'),
+
+	blueBallsRedTeam: document.getElementById('blueBallsRedTeam'),
+
+	cubesRedTeam: document.getElementById('cubesRedTeam'),
+
+	faulesRedTeam: document.getElementById('faulesRedTeam'),
+
+	secondPointsRedTeam: document.getElementById('secondPointsRedTeam'),
+
+	parkedRobotsRedTeam: document.getElementById('parkedRobotsRedTeam'),
+
+	redBallsBlueTeam: document.getElementById('redBallsBlueTeam'),
+
+	blueBallsBlueTeam: document.getElementById('blueBallsBlueTeam'),
+
+	cubesBlueTeam: document.getElementById('cubesBlueTeam'),
+
+	faulesBlueTeam: document.getElementById('faulesBlueTeam'),
+
+	secondPointsBlueTeam: document.getElementById('secondPointsBlueTeam'),
+
+	parkedRobotsBlueTeam: document.getElementById('parkedRobotsBlueTeam'),
+
 
 };
 
@@ -80,7 +68,7 @@ function onRobotConnection(connected) {
 
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/redBallsRedTeam', (key, value) => {
-    ui.redBallsRedTeam.readout.innerHTML = value;
+    ui.redBallsRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/scoreBlue', (key, value) => {
@@ -92,47 +80,47 @@ NetworkTables.addKeyListener('/SmartDashboard/scoreRed', (key, value) => {
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/blueBallsRedTeam', (key, value) => {
-    ui.blueBallsRedTeam.readout.innerHTML = value;
+    ui.blueBallsRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/cubesRedTeam', (key, value) => {
-    ui.cubesRedTeam.readout.innerHTML = value;
+    ui.cubesRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/faulesRedTeam', (key, value) => {
-    ui.faulesRedTeam.readout.innerHTML = value;
+    ui.faulesRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/secondPointsRedTeam', (key, value) => {
-    ui.secondPointsRedTeam.readout.innerHTML = value;
+    ui.secondPointsRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeam', (key, value) => {
-    ui.parkedRobotsRedTeam.readout.innerHTML = value;
+    ui.parkedRobotsRedTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/redBallsBlueTeam', (key, value) => {
-    ui.redBallsBlueTeam.readout.innerHTML = value;
+    ui.redBallsBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/blueBallsBlueTeam', (key, value) => {
-    ui.blueBallsBlueTeam.readout.innerHTML = value;
+    ui.blueBallsBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/cubesBlueTeam', (key, value) => {
-    ui.cubesBlueTeam.readout.innerHTML = value;
+    ui.cubesBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/secondPointsBlueTeam', (key, value) => {
-    ui.secondPointsBlueTeam.readout.innerHTML = value;
+    ui.secondPointsBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/faulesBlueTeam', (key, value) => {
-    ui.faulesBlueTeam.readout.innerHTML = value;
+    ui.faulesBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeam', (key, value) => {
-    ui.parkedRobotsBlueTeam.readout.innerHTML = value;
+    ui.parkedRobotsBlueTeam.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/Team1', (key, value) => {

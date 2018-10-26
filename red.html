@@ -127,7 +127,7 @@ background-color: #d9d9d9;
           document.getElementById('zaparkowaneRoboty').value = parkedRobotsRedTeam;
 		  NetworkTables.putValue('/SmartDashboard/parkedRobotsRedTeam', parkedRobotsRedTeam);
       }
-      function resetRedScore(){
+ /*     function resetRedScore(){
 		reset++;
 		if(reset == 2){
 		reset = 0;
@@ -139,7 +139,7 @@ background-color: #d9d9d9;
 		NetworkTables.putValue('/SmartDashboard/secondPointsRedTeam', 0);
 		location.reload();
 		}
-      } 
+      }*/ 
   </script>
 
 <center><h2>RED BALLS</h2>
@@ -167,8 +167,8 @@ background-color: #d9d9d9;
 <input type="text" id="zaparkowaneRoboty" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
 <button class="buttonGREEN" onclick="zaparkowaneRobotyPlus();">PLUS</button>
 
-<h2>Reset red score</h2>
-<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>
+<!--<h2>Reset red score</h2>
+<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>!-->
 
 </center>
 

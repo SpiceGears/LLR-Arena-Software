@@ -5,23 +5,56 @@
 	<meta charset="utf-8">
 	<title>Teams</title>
 	<style>
-		.buttonRED{
-			background-color: red;
-			border: none;
-			border-radius: 20px;
-			color: white;
+		
+		#right{
+			width: 175px;
+			float: left;
 		}
-		.buttonBLUE{
-			background-color: blue;
+		#rightTeamOne{
+			height: 40px;
+			border: 2px solid red;
+			border-radius: 5px;	
+		}
+		#rightTeamTwo{
+			border: 2px solid red;
+			height: 40px;
+			border-radius: 5px;
+		}
+		
+		#left{
+			float: left;
+			width: 175px;
+		}
+		#leftTeamOne{
+			border: 2px solid blue;
+			height: 40px;
+			border-radius: 5px;
+		}
+		#leftTeamTwo{
+			border: 2px solid blue;
+			height: 40px;
+			border-radius: 5px;
+		}
+		
+		.buttonADD{
+			background-color: #9900cc;
+			height: 30px;
 			border: none;
 			border-radius: 20px;
 			color: white;
+			margin-left: 5px;
 		}
 		.buttonRESET{
 			background-color: black;
+			height: 30px;
 			border: none;
 			border-radius: 20px;
 			color: white;
+		}
+		#bottom{
+			margin-left: 130px;
+			clear: both;
+			width: 90px;
 		}
 	</style>
 
@@ -31,45 +64,43 @@
 	<script>
 			
 		function resetTeams(){
-			NetworkTables.putValue('/SmartDashboard/Team1', "Team1");
-			NetworkTables.putValue('/SmartDashboard/Team2', "Team2");
-			NetworkTables.putValue('/SmartDashboard/Team3', "Team3");
-			NetworkTables.putValue('/SmartDashboard/Team4', "Team4");
+			NetworkTables.putValue('/SmartDashboard/Team1', "TeamRed");
+			NetworkTables.putValue('/SmartDashboard/Team2', "TeamRed");
+			NetworkTables.putValue('/SmartDashboard/Team3', "TeamBlue");
+			NetworkTables.putValue('/SmartDashboard/Team4', "TeamBlue");
 		}
 		
-		function setRightTeam1(){
-			var r1 = document.getElementById('rightTeamOne').value;
-			
+		function setTeams(){
+			var r1 = document.getElementById('rightTeamOne').value;	
 			NetworkTables.putValue('/SmartDashboard/Team1', r1);
-		}
-		function setRightTeam2(){
+			
 			var r2 = document.getElementById('rightTeamTwo').value;
-			
 			NetworkTables.putValue('/SmartDashboard/Team2', r2);
-		}
-		function setLeftTeam1(){
-			var l1 = document.getElementById('leftTeamOne').value;
 			
+			var l1 = document.getElementById('leftTeamOne').value;	
 			NetworkTables.putValue('/SmartDashboard/Team3', l1);
-		}
-		function setLeftTeam2(){
+			
 			var l2 = document.getElementById('leftTeamTwo').value;
-			
 			NetworkTables.putValue('/SmartDashboard/Team4', l2);
-			
 		}
 	</script>
 </body>
-	<input id="rightTeamOne" type="text"></input>
-	<button class="buttonRED" onclick="setRightTeam1();">Add Right Team</button>
-	<input id="rightTeamTwo" type="text"></input>
-	<button class="buttonRED" onclick="setRightTeam2();">Add Right Team</button>
-	<input id="leftTeamOne" type="text"></input>
-	<button class="buttonBLUE" onclick="setLeftTeam1();">Add Left Team</button>
-	<input id="leftTeamTwo" type="text"></input>
-	<button class="buttonBLUE" onclick="setLeftTeam2();">Add Left Team</button>
+	<div id="right">
+		<input id="rightTeamOne" type="text"></input>
+		<input id="rightTeamTwo" type="text"></input>
+	</div>
+	<div id="left">
+		<input id="leftTeamOne" type="text"></input>
+		<input id="leftTeamTwo" type="text"></input>
+	</div>
 	
-	<button class="buttonRESET" onclick="resetTeams();">Reset Teams</button>
+	<div id="bottom">
+		<p></p>
+			<button class="buttonADD" onclick="setTeams();">Add Teams</button>
+		<p></p>
+			<button class="buttonRESET" onclick="resetTeams();">Reset Teams</button>
+	</div>
+
 	
 	<script src="networktables/networktables.js"></script>
 </html>
