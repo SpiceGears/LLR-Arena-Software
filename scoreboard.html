@@ -7,49 +7,62 @@
 		<meta http-equiv="X-UA-Compatible=" content="IE=edge chrome=1" />
 		
 		<link rel="stylesheet" href="css/style2.css" type="text/css" />
-		
+		<script src="ui.js"></script>
 		<script>
-			var redBallsRedTeam = localStorage.getItem("redBallsRedTeam");
-			var blueBallsRedTeam = localStorage.getItem("blueBallsRedTeam");
-			var iloscCubowRedTeam = localStorage.getItem("iloscCubowRedTeam");
-			var zaparkowaneRobotyRedTeam = localStorage.getItem("zaparkowaneRobotyRedTeam");
-			var penaltyRed = localStorage.getItem("punktyKarneRedTeam");
-			var cubePointsRed = localStorage.getItem("cubePointsRed");
-			var redBallsBlueTeam = localStorage.getItem("redBallsBlueTeam");
-			var blueBallsBlueTeam = localStorage.getItem("blueBallsBlueTeam");
-			var iloscCubowBlueTeam = localStorage.getItem("iloscCubowBlueTeam");
-			var zaparkowaneRobotyBlueTeam = localStorage.getItem("zaparkowaneRobotyBlueTeam");
-			var penaltyBlue = localStorage.getItem("punktyKarneBlueTeam");
-			var cubePointsBlue = localStorage.getItem("cubePointsBlue");
+			var redBallsBlueTeam = 0;
+			var blueBallsBlueTeam = 0;
+			var faulesBlueTeam = 0;
+			var cubesBlueTeam = 0;
+			var parkedRobotsBlueTeam = 0;
+			var secondPointsBlueTeam = 0;
 			
-			function refreshScore() {
-				  redBallsRedTeam = localStorage.redBallsRedTeam;
-				  blueBallsRedTeam = localStorage.blueBallsRedTeam;
-				  iloscCubowRedTeam = localStorage.iloscCubowRedTeam;
-				  zaparkowaneRobotyRedTeam = localStorage.zaparkowaneRobotyRedTeam;
-				  cubePointsRed = localStorage.getItem("cubePointsRed");
-
-				  redBallsBlueTeam = localStorage.redBallsBlueTeam;
-				  blueBallsBlueTeam = localStorage.blueBallsBlueTeam;
-				  iloscCubowBlueTeam = localStorage.iloscCubowBlueTeam;
-				  zaparkowaneRobotyBlueTeam = localStorage.zaparkowaneRobotyBlueTeam;
-				  cubePointsBlue = localStorage.getItem("cubePointsBlue");
-				  
-				  document.getElementById("PunktyR1").innerHTML = Number(redBallsRedTeam);
-				  document.getElementById("PunktyR11").innerHTML = Number(iloscCubowRedTeam) + Number(cubePointsRed);
-				  document.getElementById("PunktyR111").innerHTML = Number(penaltyRed);
-				  document.getElementById("PunktyR1111").innerHTML = Number(redBallsBlueTeam);
-				  document.getElementById("PunktyR11111").innerHTML = Number(iloscCubowBlueTeam) + Number(cubePointsBlue);
-				  document.getElementById("PunktyR111111").innerHTML = Number(penaltyBlue);
-				  document.getElementById("PunktyR2").innerHTML = Number(blueBallsRedTeam);
-				  document.getElementById("PunktyR22").innerHTML = Number(zaparkowaneRobotyRedTeam);
-				  document.getElementById("PunktyR222").innerHTML = Number(blueBallsBlueTeam);
-				  document.getElementById("PunktyR2222").innerHTML = Number(blueBallsBlueTeam);
-			  }
+			var redBallsRedTeam = 0;
+			var blueBallsRedTeam = 0;
+			var faulesRedTeam = 0;
+			var cubesRedTeam = 0;
+			var parkedRobotsRedTeam = 0;
+			var secondPointsRedTeam = 0;
+			
+			var scoreBlue = 0;
+			var scoreRed = 0;
+			
+			var RPBlue = 0;
+			var RPRed = 0;
+			
+			
+			function RankingPoints(){
+				if(scoreBlue>scoreRed){
+					RPBlue += 2;
+				}
+				else if(scoreBlue<scoreRed){
+					RPRed += 2;
+				}
+				else{
+					RPBlue +=1;
+					RPRed +=1;
+				}
+				
+				var ballsSumaBlue = redBallsBlueTeam + blueBallsBlueTeam;
+				var ballsSumaRed = redBallsRedTeam + blueBallsRedTeam;
+				
+				if(ballsSumaBlue > 19){
+					RPBlue += 1;
+					
+					if(cubesBlueTeam > 2) RPBlue += 1;
+				}
+				if(ballsSumaRed > 19){
+					RPRed += 1;
+					
+					if(cubesRedTeam > 2) RPRed += 1;
+				}
+				
+				document.getElementById("LEWO2").innerHTML = RPBlue;
+				document.getElementById("PRAWO2").innerHTML = RPRed;
+			}
 		</script>
 		
 	</head>
-	<body onload="refreshScore();">
+	<body onload="RankingPoints();">
 		
 		<div id="Wynik">
 			
@@ -76,7 +89,7 @@
 						
 						<div id="RedName"> Team RED </div>
 						
-						<div id="PunktyPodsumowanie1">
+						<div id="finalScoreRed">
 							
 							9999
 							
@@ -92,7 +105,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR1">
+						<div id="redBallsRedTeam">
 							
 							#
 							
@@ -106,7 +119,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR2">
+						<div id="blueBallsRedTeam">
 							
 							#
 							
@@ -120,7 +133,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR11">
+						<div id="cubesRedTeam">
 							
 							#
 							
@@ -134,7 +147,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR22">
+						<div id="parkedRobotsRedTeam">
 							
 							#
 							
@@ -148,7 +161,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR111">
+						<div id="faulesRedTeam">
 							
 							#
 							
@@ -165,7 +178,7 @@
 						
 						<div id="BlueName"> Team BLUE </div>
 						
-						<div id="PunktyPodsumowanie2">
+						<div id="finalScoreBlue">
 							
 							9999
 							
@@ -180,7 +193,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR1111">
+						<div id="redBallsBlueTeam">
 							
 							#
 							
@@ -194,7 +207,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR222">
+						<div id="blueBallsBlueTeam">
 							
 							#
 							
@@ -208,7 +221,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR11111">
+						<div id="cubesBlueTeam">
 							
 							#
 							
@@ -222,7 +235,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR2222">
+						<div id="parkedRobotsBlueTeam">
 							
 							#
 							
@@ -236,7 +249,7 @@
 						
 						<div class="PunktyPionPrzedzial"></div>
 						
-						<div id="PunktyR111111">
+						<div id="faulesBlueTeam">
 							
 							#
 							

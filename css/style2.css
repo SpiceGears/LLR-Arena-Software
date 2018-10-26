@@ -67,7 +67,7 @@ body
 	font-size: 50px;
 	
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 #LEWO2{
@@ -78,7 +78,7 @@ body
 	font-size: 50px;
 	
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 
@@ -109,7 +109,7 @@ body
 	font-size: 50px;
 	
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 #PRAWO2{
@@ -120,7 +120,7 @@ body
 	font-size: 50px;
 	
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px 1px black, 1px -1px black, -1px 1px black;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
 #BottomL
@@ -225,7 +225,7 @@ body
 	float: left;
 }
 
-#PunktyPodsumowanie1{
+#finalScoreRed{
 	background-color: #cdcdcd;
 	
 	width: 125px;
@@ -254,7 +254,7 @@ body
 	float: left;
 }
 
-#PunktyPodsumowanie2{
+#finalScoreBlue{
 	background-color: #cdcdcd;
 	
 	width: 125px;
@@ -285,7 +285,7 @@ body
 	float: left;
 }
 
-#PunktyR1{
+#redBallsRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -305,7 +305,7 @@ body
 	float: left;
 }
 
-#PunktyR11{
+#cubesRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -325,7 +325,7 @@ body
 	float: left;
 }
 
-#PunktyR111{
+#faulesRedTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -345,7 +345,7 @@ body
 	float: left;
 }
 
-#PunktyR1111{
+#redBallsBlueTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -365,7 +365,7 @@ body
 	float: left;
 }
 
-#PunktyR11111{
+#cubesBlueTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -385,7 +385,7 @@ body
 	float: left;
 }
 
-#PunktyR111111{
+#faulesBlueTeam{
 	
 	background-color: #999999;
 	padding-right: 2px;
@@ -405,7 +405,7 @@ body
 	float: left;
 }
 
-#PunktyR2{
+#blueBallsRedTeam{
 	
 	background-color: #cdcdcd;
     padding-right: 2px;
@@ -425,7 +425,7 @@ body
 	float: left;
 }
 
-#PunktyR22{
+#parkedRobotsRedTeam{
 	
 	background-color: #cdcdcd;
     padding-right: 2px;
@@ -445,7 +445,7 @@ body
 	float: left;
 }
 
-#PunktyR222{
+#blueBallsBlueTeam{
 	
 	background-color: #cdcdcd;
     padding-right: 2px;
@@ -465,7 +465,7 @@ body
 	float: left;
 }
 
-#PunktyR2222{
+#parkedRobotsBlueTeam{
 	
 	background-color: #cdcdcd;
     padding-right: 2px;

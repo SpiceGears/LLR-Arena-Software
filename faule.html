@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BLUE</title>
+  <script src="jquery-3.3.1.js"></script>
+<style>
+body{
+font-size: 20px;
+background-color: #d9d9d9;
+}
+
+.buttonRED {
+    background-color: red;
+    border: none;
+	border-radius: 20px;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonGREEN {
+    background-color: green;
+    border: none;
+	border-radius: 20px;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonRESET {
+    background-color: gray;
+    border: none;
+	border-radius: 20px;
+    color: white;
+    padding: 40px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: green;
+}
+</style>
+</head>
+<body>
+
+  <script>
+
+      var faules5BlueTeam = 0;
+      var Faul10pktBlueTeam = 0;
+
+      function buttonFaul5pktUNDO() {
+          faules5BlueTeam --;
+          document.getElementById('Faul5pkt').value = faules5BlueTeam;
+		  NetworkTables.setValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
+      }
+      function buttonFaul5pkt() {
+          faules5BlueTeam ++;
+          document.getElementById('Faul5pkt').value = faules5BlueTeam;
+		  NetworkTables.setValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
+      }
+      function buttonFaul10pktUNDO() {
+          Faul10pktBlueTeam--;;
+          document.getElementById('Faul10pkt').value = Faul10pktBlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/Faul10pktBlueTeam', Faul10pktBlueTeam);
+      }
+      function buttonFaul10pkt() {
+          Faul10pktBlueTeam++;
+          document.getElementById('Faul10pkt').value = Faul10pktBlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/Faul10pktBlueTeam', Faul10pktBlueTeam);
+      }
+	  
+  </script>
+
+<center><h2>Faul 5pkt</h2>
+<button class="buttonRED" onclick="buttonFaul5pktUNDO();">MINUS</button>
+<input type="text" id="Faul5pkt" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonFaul5pkt();">PLUS</button>
+
+<h2>Faul 10pkt</h2>
+<button class="buttonRED" onclick="buttonFaul10pktUNDO();">MINUS</button>
+<input type="text" id="Faul10pkt" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonFaul10pkt()();">PLUS</button>
+
+
+<h2>Reset blue faules</h2>
+<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>
+
+</center>
+
+<script>
+  refreshPoints();
+</script>
+
+<script src="networktables/networktables.js"></script>
+
+</body>
+</html>
