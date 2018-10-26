@@ -70,7 +70,7 @@ body
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
-#LEWO2{
+#RPRed{
 	height: 100px;
 	
 	text-align: center;
@@ -112,7 +112,7 @@ body
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
 }
 
-#PRAWO2{
+#RPBlue{
 	height: 100px;
 	
 	text-align: center;

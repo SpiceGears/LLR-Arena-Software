@@ -5,9 +5,12 @@
 		<script src="/networktables/networktables.js"></script>
 		<script>
 		function on(){
-			var Test = "no dzialaj";
-			NetworkTables.setValue('test', Test);
-			document.getElementById("test").innerHTML = Test;
+		var Test;
+		NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeam', (key, value) => {
+			Test = value;
+		});
+			var x = Number(Test);
+			document.getElementById("test").innerHTML = x;
 		
 			setTimeout("on()", 1000); 
 			}
@@ -17,5 +20,8 @@
 	<body onload="on();">
 		<div id="test"></div>
 		<div id="balls">0</div>
+		
+		<script src="jquery-3.3.1.js"></script>
+		<script src="/networktables/networktables.js"></script>
 	</body>
 </html>
