@@ -12,6 +12,7 @@
 package org.usfirst.frc5883.SoftwareLLR;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -127,10 +128,20 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("RPRed", 0);
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
+    
+    public PWM pwnOutHuman = new PWM(0);
+    public PWM pwnOutTeams = new PWM(1);
+    public PWM pwnOutCubeRed = new PWM(2);
+    public PWM pwnOutCubeBlue = new PWM(3);
+    
+
 
     @Override
     public void teleopPeriodic() {
-
+    	
+    	//int outPWN = (int) (255 * Math.random());
+    	
+    	double matchTime = (int) DriverStation.getInstance().getMatchTime();
     	SmartDashboard.putNumber("timer", DriverStation.getInstance().getMatchTime());
     	
     	redBallsRedTeam = SmartDashboard.getNumber("redBallsRedTeam", 0);
@@ -199,6 +210,53 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("finalScoreBlue", finalScoreBlue);
     	SmartDashboard.putNumber("finalScoreRed", finalScoreRed);
 
+    	
+    	//Set outPut to arduino to change the leds colors
+    	//0 dla zgaszonych 
+    	//125 dla zapalonych
+    	//255 maja migac
+    	
+    	//Human Player leds
+    	if(matchTime > 120 && matchTime < 180) {
+    		pwnOutHuman.setRaw(0);
+    	} else if(matchTime < 120 && matchTime > 10) {
+    		pwnOutHuman.setRaw(125);    		
+    	} else if(matchTime <= 10){
+    		pwnOutHuman.setRaw(255);
+    	} else {
+    		pwnOutHuman.setRaw(0);
+    	}
+    	
+    	//TEAMS led
+    	if(matchTime > 10 && matchTime < 180) {
+    		pwnOutTeams.setRaw(125);
+    	} else if(matchTime <= 10){
+    		pwnOutTeams.setRaw(255);
+    	} else {
+    		pwnOutTeams.setRaw(0);
+    	}
+    	
+    	//Cube red team LED
+    	if (cubesRedTeam > 0) {
+    		if(matchTime < 10) {
+    			pwnOutCubeRed.setRaw(255);
+    		} else {
+    			pwnOutCubeRed.setRaw(125);
+    		}
+    	} else {
+			pwnOutCubeRed.setRaw(0);
+    	}
+    	
+    	//Cube blue team LED
+    	if (cubesBlueTeam > 0) {
+    		if(matchTime < 10) {
+    			pwnOutCubeBlue.setRaw(255);
+    		} else {
+    			pwnOutCubeBlue.setRaw(125);
+    		}
+    	} else {
+			pwnOutCubeBlue.setRaw(0);
+    	}
     	
         Scheduler.getInstance().run();
     }
