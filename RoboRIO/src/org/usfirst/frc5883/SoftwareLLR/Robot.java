@@ -57,7 +57,10 @@ public class Robot extends TimedRobot {
     double scoreRed = 0;
     double finalScoreBlue = 0;
     double finalScoreRed = 0;
-
+    
+	
+	double faulesBlueTeam = 0;
+	double faulesRedTeam = 0;
     
     double oldTime = 0;
     double dTime = 0;
@@ -211,6 +214,8 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("scoreRed", 0);
     	SmartDashboard.putNumber("RPBlue", 0);
     	SmartDashboard.putNumber("RPRed", 0);
+    	SmartDashboard.putNumber("faulesRedTeam", 0);
+    	SmartDashboard.putNumber("faulesBlueTeam", 0);
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
     
@@ -265,6 +270,9 @@ public class Robot extends TimedRobot {
     	scoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30;
     	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 + faules5BlueTeam*5 + faules10BlueTeam*10;
     	
+    	faulesBlueTeam = faules5RedTeam*5 +faules10RedTeam*10;
+    	faulesRedTeam = faules5BlueTeam*5 + faules10BlueTeam*10;
+    	
     	if(DriverStation.getInstance().getMatchTime() < 0.3){	    
     	    double RPRed = 0;
     	    double RPBlue = 0;
@@ -296,6 +304,8 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("scoreRed", scoreRed);
     	SmartDashboard.putNumber("finalScoreBlue", finalScoreBlue);
     	SmartDashboard.putNumber("finalScoreRed", finalScoreRed);
+    	SmartDashboard.putNumber("faulesBlueTeam", faulesBlueTeam);
+    	SmartDashboard.putNumber("faulesRedTeam", faulesRedTeam);
 
     	
     	//Set outPut to arduino to change the leds colors
