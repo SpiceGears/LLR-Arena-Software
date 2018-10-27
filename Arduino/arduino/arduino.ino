@@ -36,19 +36,22 @@
 
      Serial.begin(115200);
     }
+    
+    int x = 0;
+    
     void loop() {
-
     human_value = pulseIn(pwn0, HIGH);
     teams_value = pulseIn(pwn1, HIGH);
     cubeRed_value = pulseIn(pwn2, HIGH);
     cubeBlue_value = pulseIn(pwn3, HIGH);
     
+    //HUMAN PLAYER
     if (human_value > 600) {
       digitalWrite(relay0, LOW);
     }else if (human_value < 600){
       digitalWrite(relay0, HIGH);
     }
-
+    //TEAMS
     if (teams_value > 600) {
       digitalWrite(relay1, LOW);
       digitalWrite(relay2, LOW);
@@ -56,7 +59,7 @@
       digitalWrite(relay1, HIGH);
       digitalWrite(relay2, HIGH);
     }
-    //RED 
+    //RED  CUBE
     if (cubeRed_value > 600) {
       digitalWrite(relay3, LOW);
     }else if (cubeRed_value < 600){
@@ -68,6 +71,8 @@
     }else if (cubeBlue_value < 600){
       digitalWrite(relay4, HIGH);
     }
+
+    
     
     Serial.println("HUM TEM CR CB");  
     Serial.println(human_value);
