@@ -106,6 +106,58 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void autonomousPeriodic() {
+    	redBallsRedTeam = SmartDashboard.getNumber("redBallsRedTeam", 0);
+    	blueBallsRedTeam = SmartDashboard.getNumber("blueBallsRedTeam", 0);
+    	cubesRedTeam = SmartDashboard.getNumber("cubesRedTeam", 0);
+    	parkedRobotsRedTeam = SmartDashboard.getNumber("parkedRobotsRedTeam", 0);
+    	redBallsBlueTeam = SmartDashboard.getNumber("redBallsBlueTeam", 0);
+    	blueBallsBlueTeam = SmartDashboard.getNumber("blueBallsBlueTeam", 0);
+    	cubesBlueTeam = SmartDashboard.getNumber("cubesBlueTeam", 0);
+    	parkedRobotsBlueTeam = SmartDashboard.getNumber("parkedRobotsBlueTeam", 0);
+    	faules5BlueTeam = SmartDashboard.getNumber("faules5BlueTeam", 0);
+    	faules10BlueTeam = SmartDashboard.getNumber("faules10BlueTeam", 0);
+    	faules5RedTeam = SmartDashboard.getNumber("faules5RedTeam", 0);
+    	faules10RedTeam = SmartDashboard.getNumber("faules10RedTeam", 0);
+    	
+    	scoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30;
+    	finalScoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30 + faules5RedTeam*5 +faules10RedTeam*10;
+    	
+    	scoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30;
+    	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 + faules5BlueTeam*5 + faules10BlueTeam*10;
+    	
+    	if(DriverStation.getInstance().getMatchTime() < 0.3){	    
+    	    double RPRed = 0;
+    	    double RPBlue = 0;
+    	if(finalScoreBlue > finalScoreRed){
+    		RPBlue += 2;
+    	}else if(finalScoreBlue < finalScoreRed){
+    		RPRed += 2;
+    	}else{
+    		RPRed += 1;
+    		RPBlue += 1;
+    	}
+    	if(redBallsBlueTeam+blueBallsBlueTeam >= 20){
+    		RPBlue += 1;
+    		if(cubesBlueTeam >= 3){
+    			RPBlue += 1;
+    		}
+    	}
+    	
+    	if(redBallsRedTeam+blueBallsRedTeam >= 20){
+    		RPRed += 1;
+    		if(cubesRedTeam >= 3){
+    			RPRed += 1;
+    		}
+    	}
+    	SmartDashboard.putNumber("RPBlue", RPBlue);
+    	SmartDashboard.putNumber("RPRed", RPRed);
+    	}
+    	SmartDashboard.putNumber("scoreBlue", scoreBlue);
+    	SmartDashboard.putNumber("scoreRed", scoreRed);
+    	SmartDashboard.putNumber("finalScoreBlue", finalScoreBlue);
+    	SmartDashboard.putNumber("finalScoreRed", finalScoreRed);
+
+
         Scheduler.getInstance().run();
     }
 
