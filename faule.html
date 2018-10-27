@@ -11,14 +11,16 @@ background-color: #d9d9d9;
 }
 
 #L{
-	float: left;
+	//float: left;
+	
 }
 #R{
-	float: left;
+	//float: left;
+	margin-left:10px;
 }
 #C{
-	margin-left: auto;
-{
+	
+}
 
 .buttonRED {
     background-color: red;
@@ -107,36 +109,35 @@ background-color: #d9d9d9;
 	  
   </script>
 
-<div id="C">
+ <div id="C" style="margin-left:auto;margin-right:auto;">
+ <center>
 	<div id="L">
-		<center><h2>Faul Blue 5pkt</h2>
+		<h2 style="color:blue;">Blue 5pkt</h2>
 		<button class="buttonRED" onclick="buttonFaul5pktBlueTeamUNDO();">MINUS</button>
-		<input type="text" id="Faul5pktBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+		<input type="text" id="Faul5pktBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;text-align:center"></input>
 		<button class="buttonGREEN" onclick="buttonFaul5pktBlueTeam();">PLUS</button>
 
-		<h2>Faul Blue 10pkt</h2>
+		<h2 style="color:blue;">Blue 10pkt</h2>
 		<button class="buttonRED" onclick="buttonfaules10BlueTeamUNDO();">MINUS</button>
-		<input type="text" id="faules10BlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+		<input type="text" id="faules10BlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;text-align:center;"></input>
 		<button class="buttonGREEN" onclick="buttonfaules10BlueTeam();">PLUS</button>
 	</div>
 	<div id="R">
-		<center><h2>Faul Red 5pkt</h2>
+		<h2 style="color:red;">Red 5pkt</h2>
 		<button class="buttonRED" onclick="buttonFaul5pktRedTeamUNDO();">MINUS</button>
-		<input type="text" id="Faul5pktRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+		<input type="text" id="Faul5pktRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;text-align:center;"></input>
 		<button class="buttonGREEN" onclick="buttonFaul5pktRedTeam();">PLUS</button>
 
-		<h2>Faul Red 10pkt</h2>
+		<h2 style="color:red;">Red 10pkt</h2>
 		<button class="buttonRED" onclick="buttonfaules10RedTeamUNDO();">MINUS</button>
-		<input type="text" id="faules10RedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+		<input type="text" id="faules10RedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;text-align:center;"></input>
 		<button class="buttonGREEN" onclick="buttonfaules10RedTeam();">PLUS</button>
+		
 
-		</center>
+		
 	</div>
+	</center>
 </div>
-
-<script>
-  refreshPoints();
-</script>
 
 <script src="networktables/networktables.js"></script>
 
