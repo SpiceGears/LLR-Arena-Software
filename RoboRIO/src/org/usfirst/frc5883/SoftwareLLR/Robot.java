@@ -185,10 +185,10 @@ public class Robot extends TimedRobot {
     	blueBallsBlueTeam = SmartDashboard.getNumber("blueBallsBlueTeam", 0);
     	cubesBlueTeam = SmartDashboard.getNumber("cubesBlueTeam", 0);
     	parkedRobotsBlueTeam = SmartDashboard.getNumber("parkedRobotsBlueTeam", 0);
-    	faulesBlueTeam = SmartDashboard.getNumber("faules5BlueTeam", 0);
-    	faulesBlueTeam = SmartDashboard.getNumber("faules10BlueTeam", 0);
-    	faulesRedTeam = SmartDashboard.getNumber("faules5RedTeam", 0);
-    	faulesRedTeam = SmartDashboard.getNumber("faules10RedTeam", 0);
+    	faules5BlueTeam = SmartDashboard.getNumber("faules5BlueTeam", 0);
+    	faules10BlueTeam = SmartDashboard.getNumber("faules10BlueTeam", 0);
+    	faules5RedTeam = SmartDashboard.getNumber("faules5RedTeam", 0);
+    	faules10RedTeam = SmartDashboard.getNumber("faules10RedTeam", 0);
 
     	double newTime = System.nanoTime()/1000000000;
     	if(cubesBlueTeam > 0){
