@@ -7,6 +7,20 @@ body{
 font-size: 30px;
 }
 
+#C{
+	margin-left: auto;
+}
+
+#L{
+	width: 250px;
+	float: left;
+}
+
+#R{
+	width: 250px;
+	float: left;
+}
+
 .buttonRED {
     background-color: red;
     border: none;
@@ -48,18 +62,20 @@ font-size: 30px;
 
   </script>
 
-<div>Final Score Red</div>
+<div id="C">
+	<div id="L">
+		Final Score Red
+		
+		<input type="text" id="finalScoreRed" value="0" size=10 style="font-size:36pt;height:120px;width:200px;text-align:center;"> </input>
+		<button id="red" onclick="setRed();" style="font-size:100%;height:60px;width:204px;">Set Score</button>
+	</div>
 
-<input type="text" id="finalScoreRed" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
-<button id="red" onclick="setRed();"></button>
+	<div id="R">
+		Final Score Blue
 
-<div>Final Score Blue</div>
-
-<input type="text" id="finalScoreBlue" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"> </input>
-<button id="blue" onclick="setBlue();"></button>
-</table>
-<script>
-    refreshScore();
-</script>
+		<input type="text" id="finalScoreBlue" value="0" size=10 style="font-size:36pt;height:120px;width:200px;text-align:center;"> </input>
+		<button id="blue" onclick="setBlue();" style="font-size:100%;height:60px;width:204px;">Set Score</button>
+	</div>
+</div>
 </body>
 </html>
