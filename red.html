@@ -94,17 +94,7 @@ background-color: #d9d9d9;
           document.getElementById('blueBalls').value = blueBallsRedTeam;
 		  NetworkTables.putValue('/SmartDashboard/blueBallsRedTeam', blueBallsRedTeam);
       }
-      //PUNKTY KARNE
-      function punktyKarnePlus() {
-          faulesRedTeam++;
-          document.getElementById('punktyKarne').value = faulesRedTeam;
-		  NetworkTables.putValue('/SmartDashboard/faulesRedTeam', faulesRedTeam);
-      }
-      function punktyKarneMinus() {
-          faulesRedTeam--;
-          document.getElementById('punktyKarne').value = faulesRedTeam;
-		  NetworkTables.putValue('/SmartDashboard/faulesRedTeam', faulesRedTeam);
-      }
+     
       //ILOSC CUBOW
       function iloscCubowPlus() {
           cubesRedTeam++;

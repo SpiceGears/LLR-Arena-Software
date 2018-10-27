@@ -90,17 +90,6 @@ background-color: #d9d9d9;
           document.getElementById('blueBalls').value = blueBallsBlueTeam;
 		  NetworkTables.putValue('/SmartDashboard/blueBallsBlueTeam', blueBallsBlueTeam);
       }
-      //PUNKTY KARNE
-      function punktyKarnePlus() {
-          faulesBlueTeam++;
-          document.getElementById('punktyKarne').value = faulesBlueTeam;
-		  NetworkTables.putValue('/SmartDashboard/faulesBlueTeam', faulesBlueTeam);
-      }
-      function punktyKarneMinus() {
-          faulesBlueTeam--;
-          document.getElementById('punktyKarne').value = faulesBlueTeam;
-		  NetworkTables.putValue('/SmartDashboard/faulesBlueTeam', faulesBlueTeam);
-      }
       //ILOSC CUBOW
       function iloscCubowPlus() {
           cubesBlueTeam++;
