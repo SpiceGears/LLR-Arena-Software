@@ -199,7 +199,7 @@ public class Robot extends TimedRobot {
         	}
     	}
     	if(cubesRedTeam > 0){
-        	dTime += newTime - oldTime;;
+        	dTime += newTime - oldTime;
         	if(dTime > 0){
         		dTime = 0;
         		secondsPointsRedTeam++;
@@ -208,10 +208,10 @@ public class Robot extends TimedRobot {
     	oldTime = newTime;
     	
     	scoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30;
-    	finalScoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30 - faules5BlueTeam -faules10BlueTeam;
+    	finalScoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30 + faules5RedTeam*5 +faules10RedTeam*10;
     	
     	scoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30;
-    	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 - faules5RedTeam - faules10RedTeam;
+    	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 + faules5BlueTeam*5 + faules10BlueTeam*10;
     	
     	if(DriverStation.getInstance().getMatchTime() < 0.3){	    
     	    double RPRed = 0;
