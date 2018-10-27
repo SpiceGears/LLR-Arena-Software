@@ -49,44 +49,72 @@ background-color: #d9d9d9;
   <script>
 
       var faules5BlueTeam = 0;
-      var Faul10pktBlueTeam = 0;
+      var faules10BlueTeam = 0;
+	  var faules5RedTeam = 0;
+	  var faules10RedTeam = 0;
 
-      function buttonFaul5pktUNDO() {
+      function buttonFaul5pktBlueTeamUNDO() {
           faules5BlueTeam --;
-          document.getElementById('Faul5pkt').value = faules5BlueTeam;
-		  NetworkTables.setValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
+          document.getElementById('Faul5pktBlueTeam').value = faules5BlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
       }
-      function buttonFaul5pkt() {
+      function buttonFaul5pktBlueTeam() {
           faules5BlueTeam ++;
-          document.getElementById('Faul5pkt').value = faules5BlueTeam;
-		  NetworkTables.setValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
+          document.getElementById('Faul5pktBlueTeam').value = faules5BlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules5BlueTeam', faules5BlueTeam);
       }
-      function buttonFaul10pktUNDO() {
-          Faul10pktBlueTeam--;;
-          document.getElementById('Faul10pkt').value = Faul10pktBlueTeam;
-		  NetworkTables.putValue('/SmartDashboard/Faul10pktBlueTeam', Faul10pktBlueTeam);
+      function buttonfaules10BlueTeamUNDO() {
+          faules10BlueTeam--;;
+          document.getElementById('faules10BlueTeam').value = faules10BlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules10BlueTeam', faules10BlueTeam);
       }
-      function buttonFaul10pkt() {
-          Faul10pktBlueTeam++;
-          document.getElementById('Faul10pkt').value = Faul10pktBlueTeam;
-		  NetworkTables.putValue('/SmartDashboard/Faul10pktBlueTeam', Faul10pktBlueTeam);
+      function buttonfaules10BlueTeam() {
+          faules10BlueTeam++;
+          document.getElementById('faules10BlueTeam').value = faules10BlueTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules10BlueTeam', faules10BlueTeam);  //
+      }
+	  function buttonFaul5pktRedTeamUNDO() {
+          faules5RedTeam --;
+          document.getElementById('Faul5pktRedTeam').value = faules5RedTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules5RedTeam', faules5RedTeam);
+      }
+      function buttonFaul5pktRedTeam() {
+          faules5RedTeam ++;
+          document.getElementById('Faul5pktRedTeam').value = faules5RedTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules5RedTeam', faules5RedTeam);
+      }
+      function buttonfaules10RedTeamUNDO() {
+          faules10RedTeam--;;
+          document.getElementById('faules10RedTeam').value = faules10RedTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules10RedTeam', faules10RedTeam);
+      }
+      function buttonfaules10RedTeam() {
+          faules10RedTeam++;
+          document.getElementById('faules10RedTeam').value = faules10RedTeam;
+		  NetworkTables.putValue('/SmartDashboard/faules10RedTeam', faules10RedTeam);
       }
 	  
   </script>
 
 <center><h2>Faul 5pkt</h2>
-<button class="buttonRED" onclick="buttonFaul5pktUNDO();">MINUS</button>
-<input type="text" id="Faul5pkt" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
-<button class="buttonGREEN" onclick="buttonFaul5pkt();">PLUS</button>
+<button class="buttonRED" onclick="buttonFaul5pktBlueTeamUNDO();">MINUS</button>
+<input type="text" id="Faul5pktBlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonFaul5pktBlueTeam();">PLUS</button>
 
 <h2>Faul 10pkt</h2>
-<button class="buttonRED" onclick="buttonFaul10pktUNDO();">MINUS</button>
-<input type="text" id="Faul10pkt" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
-<button class="buttonGREEN" onclick="buttonFaul10pkt()();">PLUS</button>
+<button class="buttonRED" onclick="buttonfaules10BlueTeamUNDO();">MINUS</button>
+<input type="text" id="faules10BlueTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonfaules10BlueTeam();">PLUS</button>
 
+<center><h2>Faul 5pkt</h2>
+<button class="buttonRED" onclick="buttonFaul5pktRedTeamUNDO();">MINUS</button>
+<input type="text" id="Faul5pktRedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonFaul5pktRedTeam();">PLUS</button>
 
-<h2>Reset blue faules</h2>
-<button class="buttonRESET" onclick="resetRedScore();">Reset match</button>
+<h2>Faul 10pkt</h2>
+<button class="buttonRED" onclick="buttonfaules10RedTeamUNDO();">MINUS</button>
+<input type="text" id="faules10RedTeam" value="0" size=10 style="font-size:36pt;height:110px;width:110px;"></input>
+<button class="buttonGREEN" onclick="buttonfaules10RedTeam();">PLUS</button>
 
 </center>
 
