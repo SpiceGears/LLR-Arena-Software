@@ -238,7 +238,7 @@ public class Robot extends TimedRobot {
     	
     	//Cube red team LED
     	if (cubesRedTeam > 0) {
-    		if(matchTime < 10) {
+    		if(matchTime <= 10) {
     			pwnOutCubeRed.setRaw(255);
     		} else {
     			pwnOutCubeRed.setRaw(125);
@@ -249,7 +249,7 @@ public class Robot extends TimedRobot {
     	
     	//Cube blue team LED
     	if (cubesBlueTeam > 0) {
-    		if(matchTime < 10) {
+    		if(matchTime <= 10) {
     			pwnOutCubeBlue.setRaw(255);
     		} else {
     			pwnOutCubeBlue.setRaw(125);
