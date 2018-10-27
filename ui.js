@@ -46,6 +46,18 @@ var ui = {
 	RPRed: document.getElementById('RPRed'),
 	
 	RPBlue: document.getElementById('RPBlue'),
+	
+	redBallsBlueTeamP: document.getElementById('redBallsBlueTeamP'),
+
+	parkedRobotsBlueTeamP: document.getElementById('blueBallsBlueTeamP'),
+
+	cubesBlueTeamP: document.getElementById('cubesBlueTeamP'),
+	
+	redBallsRedTeamP: document.getElementById('redBallsRedTeamP'),
+
+	blueBallsRedTeamP: document.getElementById('blueBallsRedTeamP'),
+
+	cubesRedTeamP: document.getElementById('cubesRedTeamP'),
 
 };
 
@@ -61,6 +73,10 @@ function onRobotConnection(connected) {
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/redBallsRedTeam', (key, value) => {
     ui.redBallsRedTeam.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/redBallsRedTeamP', (key, value) => {
+    ui.redBallsRedTeamP.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/scoreBlue', (key, value) => {
@@ -87,6 +103,10 @@ NetworkTables.addKeyListener('/SmartDashboard/cubesRedTeam', (key, value) => {
     ui.cubesRedTeam.innerHTML = value;
 });
 
+NetworkTables.addKeyListener('/SmartDashboard/cubesRedTeamP', (key, value) => {
+    ui.cubesRedTeamP.innerHTML = value;
+});
+
 NetworkTables.addKeyListener('/SmartDashboard/faulesRedTeam', (key, value) => {
     ui.faulesRedTeam.innerHTML = value;
 });
@@ -99,8 +119,16 @@ NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeam', (key, value)
     ui.parkedRobotsRedTeam.innerHTML = value;
 });
 
+NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsRedTeamP', (key, value) => {
+    ui.parkedRobotsRedTeamP.innerHTML = value;
+});
+
 NetworkTables.addKeyListener('/SmartDashboard/redBallsBlueTeam', (key, value) => {
     ui.redBallsBlueTeam.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/redBallsBlueTeamP', (key, value) => {
+    ui.redBallsBlueTeamP.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/blueBallsBlueTeam', (key, value) => {
@@ -109,6 +137,10 @@ NetworkTables.addKeyListener('/SmartDashboard/blueBallsBlueTeam', (key, value) =
 
 NetworkTables.addKeyListener('/SmartDashboard/cubesBlueTeam', (key, value) => {
     ui.cubesBlueTeam.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/cubesBlueTeamP', (key, value) => {
+    ui.cubesBlueTeamP.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/secondPointsBlueTeam', (key, value) => {
@@ -121,6 +153,10 @@ NetworkTables.addKeyListener('/SmartDashboard/faulesBlueTeam', (key, value) => {
 
 NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeam', (key, value) => {
     ui.parkedRobotsBlueTeam.innerHTML = value;
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/parkedRobotsBlueTeamP', (key, value) => {
+    ui.parkedRobotsBlueTeamP.innerHTML = value;
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/Team1', (key, value) => {

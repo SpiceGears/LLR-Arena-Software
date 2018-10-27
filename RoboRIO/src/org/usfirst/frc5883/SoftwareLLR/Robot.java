@@ -300,13 +300,25 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("RPBlue", RPBlue);
     	SmartDashboard.putNumber("RPRed", RPRed);
     	}
+    	double redBallsRedTeamP = redBallsRedTeam*2;
+    	double redBallsBlueTeamP = redBallsBlueTeam*2;
+    	double cubesRedTeamP = cubesRedTeam*2 + secondsPointsRedTeam;
+    	double cubesBlueTeamP = cubesBlueTeam*2 + secondsPointsBlueTeam;
+    	double parkedRobotsRedTeamP = parkedRobotsRedTeam*2;
+    	double parkedRobotsBlueTeamP = parkedRobotsBlueTeam*2;
+    	
     	SmartDashboard.putNumber("scoreBlue", scoreBlue);
     	SmartDashboard.putNumber("scoreRed", scoreRed);
     	SmartDashboard.putNumber("finalScoreBlue", finalScoreBlue);
     	SmartDashboard.putNumber("finalScoreRed", finalScoreRed);
     	SmartDashboard.putNumber("faulesBlueTeam", faulesBlueTeam);
     	SmartDashboard.putNumber("faulesRedTeam", faulesRedTeam);
-
+    	SmartDashboard.putNumber("redBallsRedTeamP", redBallsRedTeamP);
+    	SmartDashboard.putNumber("redBallsBlueTeamP", redBallsBlueTeamP);
+    	SmartDashboard.putNumber("cubesRedTeamP", cubesRedTeamP);
+    	SmartDashboard.putNumber("cubesBlueTeamP", cubesBlueTeamP);
+    	SmartDashboard.putNumber("parkedRobotsRedTeamP", parkedRobotsRedTeamP);
+    	SmartDashboard.putNumber("parkedRobotsBlueTeamP", parkedRobotsBlueTeamP);
     	
     	//Set outPut to arduino to change the leds colors
     	//0 dla zgaszonych 
