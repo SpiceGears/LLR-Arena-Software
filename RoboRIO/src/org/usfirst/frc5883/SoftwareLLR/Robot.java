@@ -41,15 +41,18 @@ public class Robot extends TimedRobot {
     double cubesBlueTeam = 0;
     double parkedRobotsBlueTeam = 0;
     double secondsPointsBlueTeam = 0;
-    double faulesBlueTeam = 0;
+    double faules5BlueTeam = 0;
+    double faules10BlueTeam = 0;
+
     
     double redBallsRedTeam = 0;
     double blueBallsRedTeam = 0;
     double cubesRedTeam = 0;
     double parkedRobotsRedTeam = 0;
     double secondsPointsRedTeam = 0;
-    double faulesRedTeam = 0;
-    
+    double faules5RedTeam = 0;
+    double faules10RedTeam = 0;
+
     double scoreBlue = 0;
     double scoreRed = 0;
     double finalScoreBlue = 0;
@@ -113,15 +116,17 @@ public class Robot extends TimedRobot {
         cubesBlueTeam = 0;
          parkedRobotsBlueTeam = 0;
          secondsPointsBlueTeam = 0;
-        faulesBlueTeam = 0;
-        
+        faules5BlueTeam = 0;
+        faules10BlueTeam = 0;
+
         redBallsRedTeam = 0;
         blueBallsRedTeam = 0;
         cubesRedTeam = 0;
         parkedRobotsRedTeam = 0;
         secondsPointsRedTeam = 0;
-        faulesRedTeam = 0;
-        
+        faules5RedTeam = 0;
+        faules10RedTeam = 0;
+
         scoreBlue = 0;
         scoreRed = 0;
         finalScoreBlue = 0;
@@ -142,8 +147,10 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putNumber("blueBallsBlueTeam", 0);
     	SmartDashboard.putNumber("cubesBlueTeam", 0);
     	SmartDashboard.putNumber("parkedRobotsBlueTeam", 0);
-    	SmartDashboard.putNumber("faulesBlueTeam", 0);
-    	SmartDashboard.putNumber("faulesRedTeam", 0);
+    	SmartDashboard.putNumber("faules5BlueTeam", 0);
+    	SmartDashboard.putNumber("faules10BlueTeam", 0);
+    	SmartDashboard.putNumber("faules5RedTeam", 0);
+    	SmartDashboard.putNumber("faules10RedTeam", 0);
     	SmartDashboard.putNumber("secondPointsBlueTeam", 0);
     	SmartDashboard.putNumber("secondPointsRedTeam", 0);
     	SmartDashboard.putNumber("finalScoreBlue", 0);
@@ -178,9 +185,11 @@ public class Robot extends TimedRobot {
     	blueBallsBlueTeam = SmartDashboard.getNumber("blueBallsBlueTeam", 0);
     	cubesBlueTeam = SmartDashboard.getNumber("cubesBlueTeam", 0);
     	parkedRobotsBlueTeam = SmartDashboard.getNumber("parkedRobotsBlueTeam", 0);
-    	faulesBlueTeam = SmartDashboard.getNumber("faulesBlueTeam", 0);
-    	faulesRedTeam = SmartDashboard.getNumber("faulesRedTeam", 0);
-    	
+    	faulesBlueTeam = SmartDashboard.getNumber("faules5BlueTeam", 0);
+    	faulesBlueTeam = SmartDashboard.getNumber("faules10BlueTeam", 0);
+    	faulesRedTeam = SmartDashboard.getNumber("faules5RedTeam", 0);
+    	faulesRedTeam = SmartDashboard.getNumber("faules10RedTeam", 0);
+
     	double newTime = System.nanoTime()/1000000000;
     	if(cubesBlueTeam > 0){
         	dTime += newTime - oldTime;
@@ -199,10 +208,10 @@ public class Robot extends TimedRobot {
     	oldTime = newTime;
     	
     	scoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30;
-    	finalScoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30 - faulesBlueTeam;
+    	finalScoreBlue = redBallsBlueTeam*2 + blueBallsBlueTeam + cubesBlueTeam*15 + secondsPointsBlueTeam + parkedRobotsBlueTeam*30 - faules5BlueTeam -faules10BlueTeam;
     	
     	scoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30;
-    	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 - faulesRedTeam;
+    	finalScoreRed = redBallsRedTeam*2 + blueBallsRedTeam + cubesRedTeam*15 + secondsPointsRedTeam + parkedRobotsRedTeam*30 - faules5RedTeam - faules10RedTeam;
     	
     	if(DriverStation.getInstance().getMatchTime() < 0.3){	    
     	    double RPRed = 0;
