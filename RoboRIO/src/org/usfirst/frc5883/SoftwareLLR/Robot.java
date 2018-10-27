@@ -108,6 +108,32 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopInit() {
+    	redBallsBlueTeam = 0;
+        blueBallsBlueTeam = 0;
+        cubesBlueTeam = 0;
+         parkedRobotsBlueTeam = 0;
+         secondsPointsBlueTeam = 0;
+        faulesBlueTeam = 0;
+        
+        redBallsRedTeam = 0;
+        blueBallsRedTeam = 0;
+        cubesRedTeam = 0;
+        parkedRobotsRedTeam = 0;
+        secondsPointsRedTeam = 0;
+        faulesRedTeam = 0;
+        
+        scoreBlue = 0;
+        scoreRed = 0;
+        finalScoreBlue = 0;
+        finalScoreRed = 0;
+
+        
+        oldTime = 0;
+        dTime = 0;
+        pkt = 0;
+        
+        reset = 0;
+    	
     	SmartDashboard.putNumber("redBallsRedTeam", 0);
     	SmartDashboard.putNumber("blueBallsRedTeam", 0);
     	SmartDashboard.putNumber("cubesRedTeam", 0);
